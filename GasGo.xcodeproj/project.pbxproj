@@ -6,30 +6,39 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		957D4C582D8E2F8300971433 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 957D4C4F2D8E2F8300971433 /* Assets.xcassets */; };
+		957D4C5A2D8E2F8300971433 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 957D4C522D8E2F8300971433 /* LaunchScreen.storyboard */; };
+		957D4C5C2D8E2F8300971433 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D4C4E2D8E2F8300971433 /* AppDelegate.swift */; };
+		957D4C662D8E304A00971433 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 957D4C602D8E304A00971433 /* Launch.storyboard */; };
+		957D4C672D8E304A00971433 /* LaunchContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D4C612D8E304A00971433 /* LaunchContract.swift */; };
+		957D4C682D8E304A00971433 /* LaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D4C622D8E304A00971433 /* LaunchInteractor.swift */; };
+		957D4C692D8E304A00971433 /* LaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D4C632D8E304A00971433 /* LaunchPresenter.swift */; };
+		957D4C6A2D8E304A00971433 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D4C652D8E304A00971433 /* LaunchViewController.swift */; };
+		957D4C6B2D8E304A00971433 /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D4C642D8E304A00971433 /* LaunchRouter.swift */; };
+		957D4C6E2D8E31AE00971433 /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D4C6D2D8E31AE00971433 /* UIStoryboardExtension.swift */; };
+		957D4C7A2D8E322700971433 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D4C772D8E322700971433 /* BaseView.swift */; };
+		957D4C7B2D8E322700971433 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D4C762D8E322700971433 /* BaseInteractor.swift */; };
+		957D4C7C2D8E322700971433 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D4C782D8E322700971433 /* BaseViewController.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		957D4C362D8E2F7B00971433 /* GasGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GasGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		957D4C4E2D8E2F8300971433 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		957D4C4F2D8E2F8300971433 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		957D4C502D8E2F8300971433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		957D4C512D8E2F8300971433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		957D4C602D8E304A00971433 /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
+		957D4C612D8E304A00971433 /* LaunchContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchContract.swift; sourceTree = "<group>"; };
+		957D4C622D8E304A00971433 /* LaunchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInteractor.swift; sourceTree = "<group>"; };
+		957D4C632D8E304A00971433 /* LaunchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPresenter.swift; sourceTree = "<group>"; };
+		957D4C642D8E304A00971433 /* LaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRouter.swift; sourceTree = "<group>"; };
+		957D4C652D8E304A00971433 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		957D4C6D2D8E31AE00971433 /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
+		957D4C762D8E322700971433 /* BaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
+		957D4C772D8E322700971433 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		957D4C782D8E322700971433 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		957D4C482D8E2F7D00971433 /* Exceptions for "GasGo" folder in "GasGo" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 957D4C352D8E2F7B00971433 /* GasGo */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		957D4C382D8E2F7B00971433 /* GasGo */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				957D4C482D8E2F7D00971433 /* Exceptions for "GasGo" folder in "GasGo" target */,
-			);
-			path = GasGo;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		957D4C332D8E2F7B00971433 /* Frameworks */ = {
@@ -45,7 +54,7 @@
 		957D4C2D2D8E2F7B00971433 = {
 			isa = PBXGroup;
 			children = (
-				957D4C382D8E2F7B00971433 /* GasGo */,
+				957D4C572D8E2F8300971433 /* GasGo */,
 				957D4C372D8E2F7B00971433 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +65,107 @@
 				957D4C362D8E2F7B00971433 /* GasGo.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		957D4C572D8E2F8300971433 /* GasGo */ = {
+			isa = PBXGroup;
+			children = (
+				957D4C4E2D8E2F8300971433 /* AppDelegate.swift */,
+				957D4C502D8E2F8300971433 /* Info.plist */,
+				957D4C6C2D8E30F800971433 /* Extensions */,
+				957D4C6F2D8E31C100971433 /* Modules */,
+				957D4C5F2D8E302A00971433 /* Resources */,
+			);
+			path = GasGo;
+			sourceTree = "<group>";
+		};
+		957D4C5F2D8E302A00971433 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				957D4C4F2D8E2F8300971433 /* Assets.xcassets */,
+				957D4C522D8E2F8300971433 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		957D4C6C2D8E30F800971433 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				957D4C6D2D8E31AE00971433 /* UIStoryboardExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		957D4C6F2D8E31C100971433 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				957D4C792D8E322700971433 /* Base */,
+				957D4C702D8E31CF00971433 /* Launch */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		957D4C702D8E31CF00971433 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				957D4C722D8E31DC00971433 /* Contract */,
+				957D4C712D8E31D600971433 /* View */,
+				957D4C732D8E31E100971433 /* Interactor */,
+				957D4C742D8E31E600971433 /* Presenter */,
+				957D4C752D8E31EA00971433 /* Router */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		957D4C712D8E31D600971433 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				957D4C602D8E304A00971433 /* Launch.storyboard */,
+				957D4C652D8E304A00971433 /* LaunchViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		957D4C722D8E31DC00971433 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				957D4C612D8E304A00971433 /* LaunchContract.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		957D4C732D8E31E100971433 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				957D4C622D8E304A00971433 /* LaunchInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		957D4C742D8E31E600971433 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				957D4C632D8E304A00971433 /* LaunchPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		957D4C752D8E31EA00971433 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				957D4C642D8E304A00971433 /* LaunchRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		957D4C792D8E322700971433 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				957D4C762D8E322700971433 /* BaseInteractor.swift */,
+				957D4C772D8E322700971433 /* BaseView.swift */,
+				957D4C782D8E322700971433 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,9 +182,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				957D4C382D8E2F7B00971433 /* GasGo */,
 			);
 			name = GasGo;
 			packageProductDependencies = (
@@ -122,6 +229,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				957D4C582D8E2F8300971433 /* Assets.xcassets in Resources */,
+				957D4C5A2D8E2F8300971433 /* LaunchScreen.storyboard in Resources */,
+				957D4C662D8E304A00971433 /* Launch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,10 +242,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				957D4C672D8E304A00971433 /* LaunchContract.swift in Sources */,
+				957D4C7A2D8E322700971433 /* BaseView.swift in Sources */,
+				957D4C7B2D8E322700971433 /* BaseInteractor.swift in Sources */,
+				957D4C7C2D8E322700971433 /* BaseViewController.swift in Sources */,
+				957D4C682D8E304A00971433 /* LaunchInteractor.swift in Sources */,
+				957D4C692D8E304A00971433 /* LaunchPresenter.swift in Sources */,
+				957D4C6A2D8E304A00971433 /* LaunchViewController.swift in Sources */,
+				957D4C6B2D8E304A00971433 /* LaunchRouter.swift in Sources */,
+				957D4C5C2D8E2F8300971433 /* AppDelegate.swift in Sources */,
+				957D4C6E2D8E31AE00971433 /* UIStoryboardExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		957D4C522D8E2F8300971433 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				957D4C512D8E2F8300971433 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		957D4C4A2D8E2F7D00971433 /* Debug */ = {
@@ -149,7 +280,7 @@
 				INFOPLIST_FILE = GasGo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -176,7 +307,7 @@
 				INFOPLIST_FILE = GasGo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
