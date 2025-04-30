@@ -1,0 +1,36 @@
+# Xcode
+.DS_Store
+*.xcuserstate
+*.xcworkspace/xcuserdata
+*.xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData/
+build/
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# SwiftPM
+.swiftpm
+Package.resolved
+
+# Carthage
+Carthage/
+
+# Fastlane
+fastlane/report.xml
+fastlane/screenshots
+fastlane/test_output
+
+# Others
+*.hmap
+*.ipa
+*.orig
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcworkspace
+*.xcuserdatad/
+.idea/

@@ -6,5 +6,6 @@ target 'GasGo' do
   use_frameworks!
 
   # Pods for GasGo
-
+  pod 'SnapKit'	
+  pod 'lottie-ios'
 end

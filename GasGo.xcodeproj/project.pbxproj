@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1168F83C686F53A8C887D3B2 /* Pods_GasGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFAF9D3E66CFF703E730B637 /* Pods_GasGo.framework */; };
 		957D4C582D8E2F8300971433 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 957D4C4F2D8E2F8300971433 /* Assets.xcassets */; };
 		957D4C5A2D8E2F8300971433 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 957D4C522D8E2F8300971433 /* LaunchScreen.storyboard */; };
 		957D4C5C2D8E2F8300971433 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D4C4E2D8E2F8300971433 /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38CB710A982A01D7D0680197 /* Pods-GasGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GasGo.release.xcconfig"; path = "Target Support Files/Pods-GasGo/Pods-GasGo.release.xcconfig"; sourceTree = "<group>"; };
 		957D4C362D8E2F7B00971433 /* GasGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GasGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		957D4C4E2D8E2F8300971433 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		957D4C4F2D8E2F8300971433 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +40,8 @@
 		957D4C762D8E322700971433 /* BaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
 		957D4C772D8E322700971433 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		957D4C782D8E322700971433 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C03B4EC667D8360B58ABA1C9 /* Pods-GasGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GasGo.debug.xcconfig"; path = "Target Support Files/Pods-GasGo/Pods-GasGo.debug.xcconfig"; sourceTree = "<group>"; };
+		EFAF9D3E66CFF703E730B637 /* Pods_GasGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GasGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +49,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1168F83C686F53A8C887D3B2 /* Pods_GasGo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FE812E61AB494C76B4F747F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C03B4EC667D8360B58ABA1C9 /* Pods-GasGo.debug.xcconfig */,
+				38CB710A982A01D7D0680197 /* Pods-GasGo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		957D4C2D2D8E2F7B00971433 = {
 			isa = PBXGroup;
 			children = (
 				957D4C572D8E2F8300971433 /* GasGo */,
 				957D4C372D8E2F7B00971433 /* Products */,
+				4FE812E61AB494C76B4F747F /* Pods */,
+				E10FC03925E6B088008C567C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,6 +185,14 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		E10FC03925E6B088008C567C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFAF9D3E66CFF703E730B637 /* Pods_GasGo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,17 +200,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 957D4C492D8E2F7D00971433 /* Build configuration list for PBXNativeTarget "GasGo" */;
 			buildPhases = (
+				67D64E2A146B9908492A8D85 /* [CP] Check Pods Manifest.lock */,
 				957D4C322D8E2F7B00971433 /* Sources */,
 				957D4C332D8E2F7B00971433 /* Frameworks */,
 				957D4C342D8E2F7B00971433 /* Resources */,
+				26F4AA34827F326B54C40CFA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = GasGo;
-			packageProductDependencies = (
-			);
 			productName = GasGo;
 			productReference = 957D4C362D8E2F7B00971433 /* GasGo.app */;
 			productType = "com.apple.product-type.application";
@@ -237,6 +262,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		26F4AA34827F326B54C40CFA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GasGo/Pods-GasGo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GasGo/Pods-GasGo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GasGo/Pods-GasGo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67D64E2A146B9908492A8D85 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GasGo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		957D4C322D8E2F7B00971433 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -271,6 +338,7 @@
 /* Begin XCBuildConfiguration section */
 		957D4C4A2D8E2F7D00971433 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C03B4EC667D8360B58ABA1C9 /* Pods-GasGo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -298,6 +366,7 @@
 		};
 		957D4C4B2D8E2F7D00971433 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38CB710A982A01D7D0680197 /* Pods-GasGo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
