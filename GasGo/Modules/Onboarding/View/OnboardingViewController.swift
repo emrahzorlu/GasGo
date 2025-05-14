@@ -84,7 +84,7 @@ extension OnboardingViewController {
   private func setupConstraints() {
     continueButton.snp.makeConstraints { make in
       make.bottom.equalTo(view.safeAreaLayoutGuide).inset(16)
-      make.height.equalTo(52)
+      make.height.equalTo(62)
       make.leading.trailing.equalTo(view).inset(16)
     }
     
