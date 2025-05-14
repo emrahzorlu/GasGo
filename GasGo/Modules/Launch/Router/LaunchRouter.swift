@@ -13,7 +13,7 @@ final class LaunchRouter {
   weak var view: UIViewController?
   
   static func setupModule() -> LaunchViewController {
-    let viewController = UIStoryboard.viewController(fromStoryboard: "Launch") as! LaunchViewController
+    let viewController = LaunchViewController()
     let presenter = LaunchPresenter()
     let router = LaunchRouter()
     let interactor = LaunchInteractor()

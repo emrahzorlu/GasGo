@@ -8,4 +8,6 @@ target 'GasGo' do
   # Pods for GasGo
   pod 'SnapKit'	
   pod 'lottie-ios'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
 end
