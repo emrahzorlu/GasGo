@@ -25,8 +25,6 @@ final class OnboardingViewController: BaseViewController {
   private let pageControl = UIPageControl()
   private let continueButton = UIButton()
   
-  private var currentIndex: Int = 0
-  
   var presenter: OnboardingPresentation!
   
   // MARK: Lifecycle
@@ -34,35 +32,30 @@ final class OnboardingViewController: BaseViewController {
     super.viewDidLoad()
     
     presenter.viewDidLoad()
-    setupUI()
   }
   
   @objc private func continueButtonTapped() {
-    let nextIndex = currentIndex + 1
-    if nextIndex < OnboardingType.allCases.count {
-      currentIndex = nextIndex
-      let indexPath = IndexPath(item: currentIndex, section: 0)
-      collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-      
-      pageControl.currentPage = currentIndex
-    } else {
-      print("Onboarding completed")
-    }
+    presenter.continueButtonTapped()
   }
 }
 
 extension OnboardingViewController: OnboardingView {
   func setupUI() {
-    view.applyGradient(colors: [UIColor.systemBlue.withAlphaComponent(0.5).cgColor,UIColor.white.cgColor])
-    view.addSubview(collectionView)
-    view.addSubview(continueButton)
-    view.addSubview(pageControl)
+    view.applyGradient(colors: [Styles.Color.darkBlue, UIColor.white])
     
     setupCollectionView()
     setupContinueButton()
     setupPageControl()
     
     setupConstraints()
+  }
+  
+  func scrollToItem(at indexPath: IndexPath) {
+    collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+  }
+  
+  func updatePageControl(for page: Int) {
+    pageControl.currentPage = page
   }
 }
 
@@ -108,7 +101,9 @@ extension OnboardingViewController {
   }
   
   private func setupCollectionView() {
-    collectionView.register(OnboardingCollectionViewCell.self, forCellWithReuseIdentifier: "OnboardingCollectionViewCell")
+    view.addSubview(collectionView)
+    
+    collectionView.register(OnboardingCollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewCellIdentifier.onboardingCollectionViewCell.rawValue)
     collectionView.dataSource = self
     collectionView.delegate = self
     collectionView.isScrollEnabled = false
@@ -116,6 +111,8 @@ extension OnboardingViewController {
   }
   
   private func setupContinueButton() {
+    view.addSubview(continueButton)
+
     continueButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
     continueButton.backgroundColor = .black
     continueButton.tintColor = .white
@@ -125,6 +122,8 @@ extension OnboardingViewController {
   }
   
   private func setupPageControl() {
+    view.addSubview(pageControl)
+
     pageControl.numberOfPages = OnboardingType.allCases.count
     pageControl.pageIndicatorTintColor = .black
     pageControl.currentPageIndicatorTintColor = .white

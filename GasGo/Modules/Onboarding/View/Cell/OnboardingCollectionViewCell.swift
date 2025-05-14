@@ -50,7 +50,7 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
       make.leading.trailing.equalToSuperview().inset(16)
     }
   }
-
+  
   
   func configure(with title: String, subtitle: String, animationName: String) {
     titleLabel.text = title

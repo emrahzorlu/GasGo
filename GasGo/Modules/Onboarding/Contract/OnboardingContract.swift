@@ -9,11 +9,16 @@
 import Foundation
 
 protocol OnboardingView: BaseView {
+  func setupUI()
   
+  func scrollToItem(at indexPath: IndexPath)
+  func updatePageControl(for page: Int)
 }
 
 protocol OnboardingPresentation: AnyObject {
   func viewDidLoad()
+  
+  func continueButtonTapped()
 }
 
 protocol OnboardingInteractorInput: AnyObject {

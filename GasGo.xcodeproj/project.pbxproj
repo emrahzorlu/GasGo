@@ -195,7 +195,6 @@
 			children = (
 				957D4C702D8E31CF00971433 /* Launch */,
 				B1436DF82DD103A0009BCE9E /* Onboarding */,
-				B1436DF92DD103AA009BCE9E /* StationSelection */,
 				957D4C792D8E322700971433 /* Base */,
 			);
 			path = Modules;
@@ -274,13 +273,6 @@
 				B1436E042DD103D1009BCE9E /* View */,
 			);
 			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		B1436DF92DD103AA009BCE9E /* StationSelection */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = StationSelection;
 			sourceTree = "<group>";
 		};
 		B1436DFB2DD103D1009BCE9E /* Contract */ = {

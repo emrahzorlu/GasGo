@@ -44,6 +44,7 @@ class Styles {
     static let tundoraGray = UIColor(hex: "434343")
     static let silverChalice = UIColor(hex: "A0A0A0")
     static let wildStrawberryPink = UIColor(hex: "FF4081")
+    static let darkBlue = UIColor(hex: "080781")
   }
   
   enum Image {
