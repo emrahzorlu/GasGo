@@ -27,6 +27,7 @@ final class LaunchViewController: BaseViewController {
     let vc = OnboardingRouter.setupModule()
     vc.modalPresentationStyle = .fullScreen
     present(vc, animated: true)
+    // TODO: Router...
   }
 }
 

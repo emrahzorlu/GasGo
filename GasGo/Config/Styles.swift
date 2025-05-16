@@ -48,20 +48,21 @@ class Styles {
   }
   
   enum Image {
-    static let shell = UIImage(named: "Shell")
-    static let opet = UIImage(named: "Opet")
-    static let petrolOfisi = UIImage(named: "PetrolOfisi")
-    static let bp = UIImage(named: "BP")
-    static let totalEnergies = UIImage(named: "TotalEnergies")
-    static let aytemiz = UIImage(named: "Aytemiz")
-    static let milangaz = UIImage(named: "Milangaz")
-    static let lukoil = UIImage(named: "Lukoil")
-    static let sunpet = UIImage(named: "Sunpet")
-    static let kadoil = UIImage(named: "Kadoil")
-    static let turkiyePetrolleri = UIImage(named: "TurkiyePetrolleri")
-    static let alpet = UIImage(named: "Alpet")
-    static let gulf = UIImage(named: "Gulf")
-    static let other = UIImage(named: "Other")
+    static let shell = UIImage(named: "Shell")!
+    static let opet = UIImage(named: "Opet")!
+    static let petrolOfisi = UIImage(named: "PetrolOfisi")!
+    static let bp = UIImage(named: "BP")!
+    static let totalEnergies = UIImage(named: "TotalEnergies")!
+    static let aytemiz = UIImage(named: "Aytemiz")!
+    static let milangaz = UIImage(named: "Milangaz")!
+    static let lukoil = UIImage(named: "Lukoil")!
+    static let sunpet = UIImage(named: "Sunpet")!
+    static let kadoil = UIImage(named: "Kadoil")!
+    static let turkiyePetrolleri = UIImage(named: "TurkiyePetrolleri")!
+    static let alpet = UIImage(named: "Alpet")!
+    static let gulf = UIImage(named: "Gulf")!
+    static let other = UIImage(named: "Other")!
+    static let phoneSelect = UIImage(named: "PhoneSelect")!
   }
 }
 

@@ -30,7 +30,7 @@ extension OnboardingPresenter: OnboardingPresentation {
       
       view?.updatePageControl(for: currentIndex)
     } else {
-      print("Onboarding completed")
+      router.routeToStationSelection()
     }
   }
 }

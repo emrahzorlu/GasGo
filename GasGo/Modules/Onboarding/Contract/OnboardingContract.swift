@@ -30,5 +30,5 @@ protocol OnboardingInteractorOutput: AnyObject {
 }
 
 protocol OnboardingWireframe: AnyObject {
-  
+  func routeToStationSelection()
 }

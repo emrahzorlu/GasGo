@@ -33,5 +33,11 @@ final class OnboardingRouter {
 }
 
 extension OnboardingRouter: OnboardingWireframe {
-  
+  func routeToStationSelection() {
+    let stationSelectionViewController = StationSelectionRouter.setupModule()
+    
+    stationSelectionViewController.modalPresentationStyle = .fullScreen
+    
+    view?.present(stationSelectionViewController, animated: true)
+  }
 }

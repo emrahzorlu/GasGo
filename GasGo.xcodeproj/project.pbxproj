@@ -58,6 +58,11 @@
 		B14C8F592DC2379A0066E20A /* KeychainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C8F502DC2379A0066E20A /* KeychainKey.swift */; };
 		B14C8F5A2DC2379A0066E20A /* KeychainStandardConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C8F532DC2379A0066E20A /* KeychainStandardConstants.swift */; };
 		B14C8F5B2DC2379A0066E20A /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C8F542DC2379A0066E20A /* KeychainWrapper.swift */; };
+		B1F337A12DD452BD00BFE14A /* StationSelectionContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F337962DD452BD00BFE14A /* StationSelectionContract.swift */; };
+		B1F337A22DD452BD00BFE14A /* StationSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F3379A2DD452BD00BFE14A /* StationSelectionPresenter.swift */; };
+		B1F337A32DD452BD00BFE14A /* StationSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F3379F2DD452BD00BFE14A /* StationSelectionViewController.swift */; };
+		B1F337A42DD452BD00BFE14A /* StationSelectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F3379C2DD452BD00BFE14A /* StationSelectionRouter.swift */; };
+		B1F337A52DD452BD00BFE14A /* StationSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F337982DD452BD00BFE14A /* StationSelectionInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +119,11 @@
 		B14C8F522DC2379A0066E20A /* KeychainSharedConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainSharedConstants.swift; sourceTree = "<group>"; };
 		B14C8F532DC2379A0066E20A /* KeychainStandardConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStandardConstants.swift; sourceTree = "<group>"; };
 		B14C8F542DC2379A0066E20A /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		B1F337962DD452BD00BFE14A /* StationSelectionContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSelectionContract.swift; sourceTree = "<group>"; };
+		B1F337982DD452BD00BFE14A /* StationSelectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSelectionInteractor.swift; sourceTree = "<group>"; };
+		B1F3379A2DD452BD00BFE14A /* StationSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSelectionPresenter.swift; sourceTree = "<group>"; };
+		B1F3379C2DD452BD00BFE14A /* StationSelectionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSelectionRouter.swift; sourceTree = "<group>"; };
+		B1F3379F2DD452BD00BFE14A /* StationSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSelectionViewController.swift; sourceTree = "<group>"; };
 		C03B4EC667D8360B58ABA1C9 /* Pods-GasGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GasGo.debug.xcconfig"; path = "Target Support Files/Pods-GasGo/Pods-GasGo.debug.xcconfig"; sourceTree = "<group>"; };
 		EFAF9D3E66CFF703E730B637 /* Pods_GasGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GasGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -193,6 +203,7 @@
 		957D4C6F2D8E31C100971433 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B1F337952DD452AA00BFE14A /* Station Selection */,
 				957D4C702D8E31CF00971433 /* Launch */,
 				B1436DF82DD103A0009BCE9E /* Onboarding */,
 				957D4C792D8E322700971433 /* Base */,
@@ -415,6 +426,58 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		B1F337952DD452AA00BFE14A /* Station Selection */ = {
+			isa = PBXGroup;
+			children = (
+				B1F337972DD452BD00BFE14A /* Contract */,
+				B1F337992DD452BD00BFE14A /* Interactor */,
+				B1F3379B2DD452BD00BFE14A /* Presenter */,
+				B1F3379D2DD452BD00BFE14A /* Router */,
+				B1F337A02DD452BD00BFE14A /* View */,
+			);
+			path = "Station Selection";
+			sourceTree = "<group>";
+		};
+		B1F337972DD452BD00BFE14A /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				B1F337962DD452BD00BFE14A /* StationSelectionContract.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		B1F337992DD452BD00BFE14A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B1F337982DD452BD00BFE14A /* StationSelectionInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B1F3379B2DD452BD00BFE14A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B1F3379A2DD452BD00BFE14A /* StationSelectionPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B1F3379D2DD452BD00BFE14A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B1F3379C2DD452BD00BFE14A /* StationSelectionRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B1F337A02DD452BD00BFE14A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B1F3379F2DD452BD00BFE14A /* StationSelectionViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E10FC03925E6B088008C567C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,6 +643,11 @@
 				B11DDFEE2DD439E900609E9D /* UIViewExtension.swift in Sources */,
 				957D4C672D8E304A00971433 /* LaunchContract.swift in Sources */,
 				957D4C7A2D8E322700971433 /* BaseView.swift in Sources */,
+				B1F337A12DD452BD00BFE14A /* StationSelectionContract.swift in Sources */,
+				B1F337A22DD452BD00BFE14A /* StationSelectionPresenter.swift in Sources */,
+				B1F337A32DD452BD00BFE14A /* StationSelectionViewController.swift in Sources */,
+				B1F337A42DD452BD00BFE14A /* StationSelectionRouter.swift in Sources */,
+				B1F337A52DD452BD00BFE14A /* StationSelectionInteractor.swift in Sources */,
 				B14C8F562DC2379A0066E20A /* KeychainSharedConstants.swift in Sources */,
 				B14C8F572DC2379A0066E20A /* KeychainSecurityConstants.swift in Sources */,
 				B14C8F582DC2379A0066E20A /* KeychainItemAccessibility.swift in Sources */,
