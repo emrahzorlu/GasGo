@@ -14,6 +14,7 @@ protocol StationSelectionView: BaseView {
 
 protocol StationSelectionPresentation: AnyObject {
   func viewDidLoad()
+  func saveButtonTapped()
 }
 
 protocol StationSelectionInteractorInput: AnyObject {
@@ -25,5 +26,5 @@ protocol StationSelectionInteractorOutput: AnyObject {
 }
 
 protocol StationSelectionWireframe: AnyObject {
-  
+  func routeToHome()
 }

@@ -24,4 +24,9 @@ class Config {
     get { UserDefaults.standard.string(forKey: "selectedAlternativeBrand2") }
     set { UserDefaults.standard.set(newValue, forKey: "selectedAlternativeBrand2") }
   }
+
+  static var didFinishOnboarding: Bool {
+    get { UserDefaults.standard.bool(forKey: "didFinishOnboarding") }
+    set { UserDefaults.standard.set(newValue, forKey: "didFinishOnboarding") }
+  }
 }

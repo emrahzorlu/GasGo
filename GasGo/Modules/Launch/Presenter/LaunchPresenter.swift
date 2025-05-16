@@ -15,8 +15,8 @@ final class LaunchPresenter {
 }
 
 extension LaunchPresenter: LaunchPresentation {
-  func viewDidLoad() {
-    
+  func viewDidAppear() {
+    router.routeAfterLaunch()
   }
 }
 

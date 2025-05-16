@@ -18,6 +18,10 @@ extension StationSelectionPresenter: StationSelectionPresentation {
   func viewDidLoad() {
     view?.setupUI()
   }
+  
+  func saveButtonTapped() {
+    router.routeToHome()
+  }
 }
 
 extension StationSelectionPresenter: StationSelectionInteractorOutput {

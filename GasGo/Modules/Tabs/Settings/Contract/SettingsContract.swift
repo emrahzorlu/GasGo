@@ -1,0 +1,29 @@
+//
+//  SettingsContract.swift
+//  GasGo
+//
+//  Created by Emrah Zorlu on 17.05.2025.
+//  
+//
+
+import Foundation
+
+protocol SettingsView: BaseView {
+  
+}
+
+protocol SettingsPresentation: AnyObject {
+  func viewDidLoad()
+}
+
+protocol SettingsInteractorInput: AnyObject {
+  
+}
+
+protocol SettingsInteractorOutput: AnyObject {
+  
+}
+
+protocol SettingsWireframe: AnyObject {
+  
+}

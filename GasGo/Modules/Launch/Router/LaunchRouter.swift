@@ -3,7 +3,7 @@
 //  GasGo
 //
 //  Created by Burak Eryavuz on 22.03.2025.
-//  
+//
 //
 
 import Foundation
@@ -33,5 +33,17 @@ final class LaunchRouter {
 }
 
 extension LaunchRouter: LaunchWireframe {
-  
+  func routeAfterLaunch() {
+    if Config.didFinishOnboarding {
+      let mainTabbarController = MainTabBarController()
+      mainTabbarController.modalPresentationStyle = .fullScreen
+      
+      view?.present(mainTabbarController, animated: true)
+    } else {
+      let onboardingViewController = OnboardingRouter.setupModule()
+      onboardingViewController.modalPresentationStyle = .fullScreen
+
+      view?.present(onboardingViewController, animated: true)
+    }
+  }
 }

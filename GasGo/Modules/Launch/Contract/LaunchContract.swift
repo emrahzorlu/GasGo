@@ -13,7 +13,7 @@ protocol LaunchView: BaseView {
 }
 
 protocol LaunchPresentation: AnyObject {
-  func viewDidLoad()
+  func viewDidAppear()
 }
 
 protocol LaunchInteractorInput: AnyObject {
@@ -25,5 +25,5 @@ protocol LaunchInteractorOutput: AnyObject {
 }
 
 protocol LaunchWireframe: AnyObject {
-  
+  func routeAfterLaunch()
 }

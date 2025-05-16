@@ -86,6 +86,7 @@ final class StationSelectionViewController: BaseViewController {
     Config.selectedAlternativeBrand1 = selectedBrand2
     Config.selectedAlternativeBrand2 = selectedBrand3
     
+    presenter.saveButtonTapped()
     print("Saved to Config:")
     print("Favorite: \(Config.selectedFavoriteBrand ?? "nil")")
     print("Alternative 1: \(Config.selectedAlternativeBrand1 ?? "nil")")

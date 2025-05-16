@@ -3,7 +3,7 @@
 //  GasGo
 //
 //  Created by Emrah Zorlu on 14.05.2025.
-//  
+//
 //
 
 import Foundation
@@ -33,5 +33,14 @@ final class StationSelectionRouter {
 }
 
 extension StationSelectionRouter: StationSelectionWireframe {
-  
+  func routeToHome() {
+    Config.didFinishOnboarding = true
+    
+    let tabBar = MainTabBarController()
+    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+       let window = windowScene.windows.first {
+      window.rootViewController = tabBar
+      window.makeKeyAndVisible()
+    }
+  }
 }
