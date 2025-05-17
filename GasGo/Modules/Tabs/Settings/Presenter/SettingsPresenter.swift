@@ -16,7 +16,7 @@ final class SettingsPresenter {
 
 extension SettingsPresenter: SettingsPresentation {
   func viewDidLoad() {
-    
+    view?.setupUI()
   }
 }
 

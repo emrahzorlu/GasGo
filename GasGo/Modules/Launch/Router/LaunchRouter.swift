@@ -34,7 +34,7 @@ final class LaunchRouter {
 
 extension LaunchRouter: LaunchWireframe {
   func routeAfterLaunch() {
-    if Config.didFinishOnboarding {
+    if !Config.didFinishOnboarding {
       let mainTabbarController = MainTabBarController()
       mainTabbarController.modalPresentationStyle = .fullScreen
       

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SettingsView: BaseView {
-  
+  func setupUI()
 }
 
 protocol SettingsPresentation: AnyObject {

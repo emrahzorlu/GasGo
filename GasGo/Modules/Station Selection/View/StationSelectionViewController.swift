@@ -96,7 +96,8 @@ final class StationSelectionViewController: BaseViewController {
 
 extension StationSelectionViewController: StationSelectionView {
   func setupUI() {
-    view.applyGradient(colors: [Styles.Color.darkBlue, UIColor.white])
+    view.applyGradient(colors: [UIColor(hex: "#0F2027"), UIColor(hex: "#2C5364")])
+    
     favouritePickerView.delegate = self
     favouritePickerView.dataSource = self
     firstAlternativePickerView.delegate = self
@@ -277,7 +278,7 @@ extension StationSelectionViewController: UIPickerViewDelegate, UIPickerViewData
     let title = filtered[row]
     let attributes: [NSAttributedString.Key: Any] = [
       .font: Styles.font(family: .outfit, weight: .medium, size: 16),
-      .foregroundColor: UIColor.black
+      .foregroundColor: UIColor.white
     ]
     
     return NSAttributedString(string: title, attributes: attributes)

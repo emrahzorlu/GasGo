@@ -20,7 +20,7 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
   private let titleLabel: UILabel = {
     let titleLabel = UILabel()
     titleLabel.font = Styles.font(family: .outfit, weight: .medium, size: 24)
-    titleLabel.textColor = .black
+    titleLabel.textColor = .white
     titleLabel.numberOfLines = 0
     titleLabel.textAlignment = .center
     return titleLabel
