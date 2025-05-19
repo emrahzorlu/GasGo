@@ -6,6 +6,8 @@
     <string>Yakın benzin istasyonlarını gösterebilmek için konumunuza ihtiyaç duyuyoruz.</string>
     <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
     <string>Uygulama konumunuzu arka planda da kullanabilir.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Yakın benzin istasyonlarını gösterebilmek için konumunuzu her zaman kullanmak istiyoruz.</string>
     <key>UIAppFonts</key>
     <array>
       <string>Outfit-Black.ttf</string>

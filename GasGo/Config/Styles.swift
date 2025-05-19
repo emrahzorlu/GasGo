@@ -44,7 +44,11 @@ class Styles {
     static let tundoraGray = UIColor(hex: "434343")
     static let silverChalice = UIColor(hex: "A0A0A0")
     static let wildStrawberryPink = UIColor(hex: "FF4081")
+    
     static let darkBlue = UIColor(hex: "080781")
+    static let gableGreen = UIColor(hex: "0F2027")
+    static let sanJuanBlue = UIColor(hex: "2C5364")
+    static let buttercupYellow = UIColor(hex: "F5A623")
   }
   
   enum Image {
@@ -61,8 +65,11 @@ class Styles {
     static let turkiyePetrolleri = UIImage(named: "TurkiyePetrolleri")!
     static let alpet = UIImage(named: "Alpet")!
     static let gulf = UIImage(named: "Gulf")!
+    static let moil = UIImage(named: "Moil")!
     static let other = UIImage(named: "Other")!
+    
     static let phoneSelect = UIImage(named: "PhoneSelect")!
+    static let baseMarker = UIImage(named: "BaseMarker")!
   }
 }
 

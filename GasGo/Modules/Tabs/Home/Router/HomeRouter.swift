@@ -16,7 +16,8 @@ final class HomeRouter {
     let viewController = HomeViewController()
     let presenter = HomePresenter()
     let router = HomeRouter()
-    let interactor = HomeInteractor()
+    let fetcher = HomeFetcher()
+    let interactor = HomeInteractor(fetcher: fetcher)
     
     viewController.presenter =  presenter
     
@@ -33,5 +34,9 @@ final class HomeRouter {
 }
 
 extension HomeRouter: HomeWireframe {
-  
+  func routeToStationDetail(with placeID: String) {
+    let stationDetailViewController = StationDetailRouter.setupModule(placeID: placeID)
+    
+    view?.navigationController?.pushViewController(stationDetailViewController, animated: false)
+  }
 }

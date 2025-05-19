@@ -10,6 +10,7 @@ import UIKit
 
 enum CollectionViewCellIdentifier: String {
   case onboardingCollectionViewCell = "OnboardingCollectionViewCell"
+  case stationCardCollectionViewCell = "StationCardCollectionViewCell"
 }
 
 enum TableViewCellIdentifier: String {
@@ -54,6 +55,133 @@ enum OnboardingType: CaseIterable {
     }
   }
 }
+
+enum GasStationBrand: String, CaseIterable {
+  case shell
+  case opet
+  case petrolOfisi
+  case bp
+  case totalEnergies
+  case aytemiz
+  case milangaz
+  case lukoil
+  case sunpet
+  case kadoil
+  case turkiyePetrolleri
+  case alpet
+  case gulf
+  case other
+  case moil
+  
+  var displayName: String {
+    switch self {
+    case .shell:
+      return "Shell"
+    case .opet:
+      return "Opet"
+    case .petrolOfisi:
+      return "Petrol Ofisi"
+    case .bp:
+      return "BP"
+    case .totalEnergies:
+      return "TotalEnergies"
+    case .aytemiz:
+      return "Aytemiz"
+    case .milangaz:
+      return "Milangaz"
+    case .lukoil:
+      return "Lukoil"
+    case .sunpet:
+      return "Sunpet"
+    case .kadoil:
+      return "Kadoil"
+    case .turkiyePetrolleri:
+      return "Türkiye Petrolleri"
+    case .alpet:
+      return "Alpet"
+    case .gulf:
+      return "Gulf"
+    case .moil:
+      return "Moil"
+    case .other:
+      return "Diğer"
+    }
+  }
+  
+  var logo: UIImage {
+    switch self {
+    case .shell:
+      return Styles.Image.shell
+    case .opet:
+      return Styles.Image.opet
+    case .petrolOfisi:
+      return Styles.Image.petrolOfisi
+    case .bp:
+      return Styles.Image.bp
+    case .totalEnergies:
+      return Styles.Image.totalEnergies
+    case .aytemiz:
+      return Styles.Image.aytemiz
+    case .milangaz:
+      return Styles.Image.milangaz
+    case .lukoil:
+      return Styles.Image.lukoil
+    case .sunpet:
+      return Styles.Image.sunpet
+    case .kadoil:
+      return Styles.Image.kadoil
+    case .turkiyePetrolleri:
+      return Styles.Image.turkiyePetrolleri
+    case .alpet:
+      return Styles.Image.alpet
+    case .gulf:
+      return Styles.Image.gulf
+    case .moil:
+      return Styles.Image.moil
+    case .other:
+      return Styles.Image.other
+    }
+  }
+}
+
+extension GasStationBrand {
+  init(matching name: String) {
+    let lowercasedName = name.lowercased()
+    
+    if lowercasedName.contains("shell") {
+      self = .shell
+    } else if lowercasedName.contains("opet") {
+      self = .opet
+    } else if lowercasedName.contains("petrol ofisi") {
+      self = .petrolOfisi
+    } else if lowercasedName.contains("bp") {
+      self = .bp
+    } else if lowercasedName.contains("total") {
+      self = .totalEnergies
+    } else if lowercasedName.contains("aytemiz") {
+      self = .aytemiz
+    } else if lowercasedName.contains("milangaz") {
+      self = .milangaz
+    } else if lowercasedName.contains("lukoil") {
+      self = .lukoil
+    } else if lowercasedName.contains("sunpet") {
+      self = .sunpet
+    } else if lowercasedName.contains("kadoil") {
+      self = .kadoil
+    } else if lowercasedName.contains("türkiye petrolleri") || lowercasedName.contains("tp") {
+      self = .turkiyePetrolleri
+    } else if lowercasedName.contains("alpet") {
+      self = .alpet
+    } else if lowercasedName.contains("gulf") {
+      self = .gulf
+    } else if lowercasedName.contains("moil") {
+      self = .moil
+    } else {
+      self = .other
+    }
+  }
+}
+
 
 enum SettingsGroup {
   case appFeedback

@@ -41,8 +41,8 @@ final class OnboardingViewController: BaseViewController {
 
 extension OnboardingViewController: OnboardingView {
   func setupUI() {
-    view.applyGradient(colors: [UIColor(hex: "#0F2027"), UIColor(hex: "#2C5364")])
-
+    view.applyGradient(colors: [Styles.Color.gableGreen, Styles.Color.sanJuanBlue])
+    
     setupCollectionView()
     setupContinueButton()
     setupPageControl()

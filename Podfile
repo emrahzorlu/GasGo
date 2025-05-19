@@ -6,8 +6,9 @@ target 'GasGo' do
   use_frameworks!
 
   # Pods for GasGo
-  pod 'SnapKit'	
+  pod 'SnapKit'
   pod 'lottie-ios'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'PanModal'
 end

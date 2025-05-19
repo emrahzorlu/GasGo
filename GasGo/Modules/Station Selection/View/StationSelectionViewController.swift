@@ -27,21 +27,7 @@ final class StationSelectionViewController: BaseViewController {
   
   var presenter: StationSelectionPresentation!
   
-  let fuelBrands = [
-    "Shell",
-    "Petrol Ofisi",
-    "BP",
-    "TotalEnergies",
-    "Aytemiz",
-    "Milangaz",
-    "Lukoil",
-    "Sunpet",
-    "Kadoil",
-    "TP (Türkiye Petrolleri)",
-    "Alpet",
-    "Gulf",
-    "Diğer"
-  ]
+  let fuelBrands: [String] = GasStationBrand.allCases.map { $0.displayName }
   
   var selectedBrand1: String?
   var selectedBrand2: String?
@@ -53,7 +39,6 @@ final class StationSelectionViewController: BaseViewController {
     
     presenter.viewDidLoad()
     
-    // Set default brand selections so initial pickers differ
     setInitialBrandSelections(
       favorite: fuelBrands[0],
       alternative1: fuelBrands[1],
@@ -96,7 +81,7 @@ final class StationSelectionViewController: BaseViewController {
 
 extension StationSelectionViewController: StationSelectionView {
   func setupUI() {
-    view.applyGradient(colors: [UIColor(hex: "#0F2027"), UIColor(hex: "#2C5364")])
+    view.applyGradient(colors: [Styles.Color.gableGreen, Styles.Color.sanJuanBlue])
     
     favouritePickerView.delegate = self
     favouritePickerView.dataSource = self
