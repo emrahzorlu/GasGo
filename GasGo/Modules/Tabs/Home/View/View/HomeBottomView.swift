@@ -9,7 +9,7 @@ import SnapKit
 import GoogleMaps
 
 final class HomeBottomView: UIView {
-  let collectionView: UICollectionView
+  private let collectionView: UICollectionView
   private var stations: [NearbyPlaceEntity] = []
   
   var didScrollToStation: ((NearbyPlaceEntity) -> Void)?

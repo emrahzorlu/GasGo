@@ -11,6 +11,7 @@ import UIKit
 enum CollectionViewCellIdentifier: String {
   case onboardingCollectionViewCell = "OnboardingCollectionViewCell"
   case stationCardCollectionViewCell = "StationCardCollectionViewCell"
+  case stationDetailCollectionViewCell = "StationDetailCollectionViewCell"
 }
 
 enum TableViewCellIdentifier: String {
@@ -184,11 +185,14 @@ extension GasStationBrand {
 
 
 enum SettingsGroup {
+  case settings
   case appFeedback
   case legalInfo
   
   var settingTypes: [SettingsType] {
     switch self {
+    case .settings:
+      return [.chooseStations]
     case .appFeedback:
       let settingsTypes: [SettingsType] = [.rateUs, .feedback, .share]
       return settingsTypes
@@ -204,9 +208,12 @@ enum SettingsType {
   case share
   case privacyPolicy
   case terms
+  case chooseStations
   
   var title: String {
     switch self {
+    case .chooseStations:
+      return "İstasyon Seçimlerini Değiştir"
     case .rateUs:
       return "Bizi değerlendir"
     case .feedback:
@@ -217,21 +224,24 @@ enum SettingsType {
       return "Gizlikik Sözleşmesi"
     case .terms:
       return "Kullanım Koşulları"
+
     }
   }
   
   var icon: UIImage? {
     switch self {
+    case .chooseStations:
+      return UIImage(named: "Repeat")?.withTintColor(Styles.Color.buttercupYellow)
     case .rateUs:
-      return UIImage(named: "RateUs")?.withTintColor(UIColor(hex: "#F5A623"))
+      return UIImage(named: "RateUs")?.withTintColor(Styles.Color.buttercupYellow)
     case .feedback:
-      return UIImage(named: "LeaveFeedback")?.withTintColor(UIColor(hex: "#F5A623"))
+      return UIImage(named: "LeaveFeedback")?.withTintColor(Styles.Color.buttercupYellow)
     case .share:
-      return UIImage(named: "Share")?.withTintColor(UIColor(hex: "#F5A623"))
+      return UIImage(named: "Share")?.withTintColor(Styles.Color.buttercupYellow)
     case .privacyPolicy:
-      return UIImage(named: "PrivacyPolicy")?.withTintColor(UIColor(hex: "#F5A623"))
+      return UIImage(named: "PrivacyPolicy")?.withTintColor(Styles.Color.buttercupYellow)
     case .terms:
-      return UIImage(named: "TermsOfUse")?.withTintColor(UIColor(hex: "#F5A623"))
+      return UIImage(named: "TermsOfUse")?.withTintColor(Styles.Color.buttercupYellow)
     }
   }
 }

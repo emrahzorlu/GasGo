@@ -12,7 +12,7 @@ import SnapKit
 final class SettingsViewController: BaseViewController {
   private let titleLabel = UILabel()
   private let tableView = UITableView(frame: .zero, style: .insetGrouped)
-  private let settingGroups: [SettingsGroup] = [.appFeedback, .legalInfo]
+  private let settingGroups: [SettingsGroup] = [.settings, .appFeedback, .legalInfo]
   
   var presenter: SettingsPresentation!
   
@@ -100,6 +100,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     switch settingGroups[section] {
     case .appFeedback: title = "Uygulama Geri Bildirimleri"
     case .legalInfo:   title = "Yasal Bilgiler"
+    case .settings: title = "Uygulama Ayarları"
     }
     
     label.text = title
@@ -115,9 +116,10 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     return container
   }
   
-//  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//    tableView.deselectRow(at: indexPath, animated: true)
-//    let selected = settingGroups[indexPath.section].settingTypes[indexPath.row]
-//    presenter.didSelect(setting: selected)
-//  }
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+    let selected = settingGroups[indexPath.section].settingTypes[indexPath.row]
+    
+    presenter.handleSettingSelection(setting: selected)
+  }
 }

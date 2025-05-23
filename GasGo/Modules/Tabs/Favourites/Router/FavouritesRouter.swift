@@ -3,7 +3,7 @@
 //  GasGo
 //
 //  Created by Emrah Zorlu on 17.05.2025.
-//  
+//
 //
 
 import Foundation
@@ -33,5 +33,9 @@ final class FavouritesRouter {
 }
 
 extension FavouritesRouter: FavouritesWireframe {
-  
+  func navigateToStationDetail(from station: FavouriteStationEntity) {
+    let detailViewController = StationDetailRouter.setupModule(placeID: station.id)
+    
+    view?.navigationController?.pushViewController(detailViewController, animated: true)
+  }
 }

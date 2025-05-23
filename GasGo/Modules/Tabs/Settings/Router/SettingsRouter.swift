@@ -33,5 +33,10 @@ final class SettingsRouter {
 }
 
 extension SettingsRouter: SettingsWireframe {
-  
+  func routeToStationSelection() {
+    let stationSelectionViewController = StationSelectionRouter.setupModule(fromSettings: true)
+    stationSelectionViewController.modalPresentationStyle = .fullScreen
+    
+    view?.present(stationSelectionViewController, animated: true)
+  }
 }

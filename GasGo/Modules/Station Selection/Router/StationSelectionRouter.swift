@@ -12,7 +12,7 @@ import UIKit
 final class StationSelectionRouter {
   weak var view: UIViewController?
   
-  static func setupModule() -> StationSelectionViewController {
+  static func setupModule(fromSettings: Bool = false) -> StationSelectionViewController {
     let viewController = StationSelectionViewController()
     let presenter = StationSelectionPresenter()
     let router = StationSelectionRouter()
@@ -23,12 +23,17 @@ final class StationSelectionRouter {
     presenter.view = viewController
     presenter.router = router
     presenter.interactor = interactor
+    presenter.isFromSettings = fromSettings
     
     router.view = viewController
     
     interactor.output = presenter
     
     return viewController
+  }
+  
+  func dismiss() {
+    view?.dismiss(animated: true)
   }
 }
 

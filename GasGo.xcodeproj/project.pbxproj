@@ -20,8 +20,20 @@
 		957D4C7A2D8E322700971433 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D4C772D8E322700971433 /* BaseView.swift */; };
 		957D4C7B2D8E322700971433 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D4C762D8E322700971433 /* BaseInteractor.swift */; };
 		957D4C7C2D8E322700971433 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D4C782D8E322700971433 /* BaseViewController.swift */; };
+		B103737F2DDFF01900360C22 /* DirectionsEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103737E2DDFF01900360C22 /* DirectionsEndpoints.swift */; };
+		B10373812DDFF02900360C22 /* DirectionsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10373802DDFF02900360C22 /* DirectionsFetcher.swift */; };
+		B10373832DDFF03100360C22 /* DirectionsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10373822DDFF03100360C22 /* DirectionsWorker.swift */; };
+		B10373852DDFF03D00360C22 /* DirectionsMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10373842DDFF03D00360C22 /* DirectionsMethods.swift */; };
+		B10373872DDFF78500360C22 /* DirectionsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10373862DDFF78500360C22 /* DirectionsEntity.swift */; };
+		B103738A2DE0021000360C22 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10373892DE0021000360C22 /* FavoritesManager.swift */; };
+		B103738D2DE002BC00360C22 /* Favorites.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B103738B2DE002BC00360C22 /* Favorites.xcdatamodeld */; };
+		B10373902DE0042700360C22 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103738F2DE0042700360C22 /* CoreDataStack.swift */; };
+		B103739C2DE008DC00360C22 /* FavouritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103739B2DE008DC00360C22 /* FavouritesTableViewCell.swift */; };
+		B103739E2DE0109900360C22 /* FavouriteStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103739D2DE0109900360C22 /* FavouriteStation.swift */; };
+		B10373A02DE0121F00360C22 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103739F2DE0121F00360C22 /* NetworkManager.swift */; };
 		B111A3DD2DDA71DC0058711F /* HomeBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B111A3DC2DDA71DC0058711F /* HomeBottomView.swift */; };
 		B111A3DF2DDA74520058711F /* StationCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B111A3DE2DDA74520058711F /* StationCardCollectionViewCell.swift */; };
+		B11854172DDE351500B85086 /* StationDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11854162DDE351500B85086 /* StationDetailCollectionViewCell.swift */; };
 		B1436E062DD103D1009BCE9E /* OnboardingContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1436DFA2DD103D1009BCE9E /* OnboardingContract.swift */; };
 		B1436E072DD103D1009BCE9E /* OnboardingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1436DFC2DD103D1009BCE9E /* OnboardingInteractor.swift */; };
 		B1436E082DD103D1009BCE9E /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1436E002DD103D1009BCE9E /* OnboardingRouter.swift */; };
@@ -125,8 +137,20 @@
 		957D4C762D8E322700971433 /* BaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
 		957D4C772D8E322700971433 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		957D4C782D8E322700971433 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B103737E2DDFF01900360C22 /* DirectionsEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsEndpoints.swift; sourceTree = "<group>"; };
+		B10373802DDFF02900360C22 /* DirectionsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsFetcher.swift; sourceTree = "<group>"; };
+		B10373822DDFF03100360C22 /* DirectionsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsWorker.swift; sourceTree = "<group>"; };
+		B10373842DDFF03D00360C22 /* DirectionsMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsMethods.swift; sourceTree = "<group>"; };
+		B10373862DDFF78500360C22 /* DirectionsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsEntity.swift; sourceTree = "<group>"; };
+		B10373892DE0021000360C22 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
+		B103738C2DE002BC00360C22 /* Favorites.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Favorites.xcdatamodel; sourceTree = "<group>"; };
+		B103738F2DE0042700360C22 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		B103739B2DE008DC00360C22 /* FavouritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewCell.swift; sourceTree = "<group>"; };
+		B103739D2DE0109900360C22 /* FavouriteStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteStation.swift; sourceTree = "<group>"; };
+		B103739F2DE0121F00360C22 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B111A3DC2DDA71DC0058711F /* HomeBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomView.swift; sourceTree = "<group>"; };
 		B111A3DE2DDA74520058711F /* StationCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		B11854162DDE351500B85086 /* StationDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		B1436DFA2DD103D1009BCE9E /* OnboardingContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContract.swift; sourceTree = "<group>"; };
 		B1436DFC2DD103D1009BCE9E /* OnboardingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInteractor.swift; sourceTree = "<group>"; };
 		B1436DFE2DD103D1009BCE9E /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
@@ -240,6 +264,7 @@
 		957D4C2D2D8E2F7B00971433 = {
 			isa = PBXGroup;
 			children = (
+				B103738E2DE0041400360C22 /* Core Data */,
 				957D4C572D8E2F8300971433 /* GasGo */,
 				957D4C372D8E2F7B00971433 /* Products */,
 				4FE812E61AB494C76B4F747F /* Pods */,
@@ -360,6 +385,35 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		B103737D2DDFF00100360C22 /* Directions */ = {
+			isa = PBXGroup;
+			children = (
+				B103737E2DDFF01900360C22 /* DirectionsEndpoints.swift */,
+				B10373802DDFF02900360C22 /* DirectionsFetcher.swift */,
+				B10373822DDFF03100360C22 /* DirectionsWorker.swift */,
+				B10373842DDFF03D00360C22 /* DirectionsMethods.swift */,
+			);
+			path = Directions;
+			sourceTree = "<group>";
+		};
+		B103738E2DE0041400360C22 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				B103738B2DE002BC00360C22 /* Favorites.xcdatamodeld */,
+				B103738F2DE0042700360C22 /* CoreDataStack.swift */,
+				B103739D2DE0109900360C22 /* FavouriteStation.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		B103739A2DE008D300360C22 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B103739B2DE008DC00360C22 /* FavouritesTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		B111A3DA2DDA71C10058711F /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +426,14 @@
 			isa = PBXGroup;
 			children = (
 				B111A3DE2DDA74520058711F /* StationCardCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B11854152DDE34FD00B85086 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B11854162DDE351500B85086 /* StationDetailCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -477,6 +539,7 @@
 		B14C8F2B2DC236E10066E20A /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				B103737D2DDFF00100360C22 /* Directions */,
 				B1CB34812DD93663008B9210 /* Station Detail */,
 				B1CB34722DD8FC49008B9210 /* Home */,
 				B14C8F5D2DC237CC0066E20A /* Entities */,
@@ -532,6 +595,7 @@
 				B1CB347F2DD90048008B9210 /* NearbyPlaceEntity.swift */,
 				B1CB348C2DD9373C008B9210 /* PlaceDetailEntity.swift */,
 				B14EAC922DDAA10F00F8F568 /* StationNavigationInfo.swift */,
+				B10373862DDFF78500360C22 /* DirectionsEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -635,6 +699,7 @@
 		B17014912DD7F497000306F9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B103739A2DE008D300360C22 /* Cell */,
 				B17014902DD7F497000306F9 /* FavouritesViewController.swift */,
 			);
 			path = View;
@@ -736,6 +801,8 @@
 			children = (
 				B1CB346B2DD8CCC8008B9210 /* GoogleMapsManager.swift */,
 				B1CB346D2DD8CF08008B9210 /* LocationManager.swift */,
+				B10373892DE0021000360C22 /* FavoritesManager.swift */,
+				B103739F2DE0121F00360C22 /* NetworkManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -817,6 +884,7 @@
 		B1CB34992DD941D2008B9210 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B11854152DDE34FD00B85086 /* Cell */,
 				B1CB34982DD941D2008B9210 /* StationDetailViewController.swift */,
 			);
 			path = View;
@@ -1037,6 +1105,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B103739E2DE0109900360C22 /* FavouriteStation.swift in Sources */,
 				957D4C672D8E304A00971433 /* LaunchContract.swift in Sources */,
 				957D4C7A2D8E322700971433 /* BaseView.swift in Sources */,
 				B1CB34872DD9368D008B9210 /* StationDetailWorker.swift in Sources */,
@@ -1055,12 +1124,14 @@
 				B14C8F572DC2379A0066E20A /* KeychainSecurityConstants.swift in Sources */,
 				B111A3DF2DDA74520058711F /* StationCardCollectionViewCell.swift in Sources */,
 				B14C8F582DC2379A0066E20A /* KeychainItemAccessibility.swift in Sources */,
+				B10373852DDFF03D00360C22 /* DirectionsMethods.swift in Sources */,
 				B14C8F592DC2379A0066E20A /* KeychainKey.swift in Sources */,
 				B14C8F5A2DC2379A0066E20A /* KeychainStandardConstants.swift in Sources */,
 				B1436E0F2DD113B2009BCE9E /* OnboardingCollectionViewCell.swift in Sources */,
 				B14C8F5B2DC2379A0066E20A /* KeychainWrapper.swift in Sources */,
 				957D4C7B2D8E322700971433 /* BaseInteractor.swift in Sources */,
 				B111A3DD2DDA71DC0058711F /* HomeBottomView.swift in Sources */,
+				B103739C2DE008DC00360C22 /* FavouritesTableViewCell.swift in Sources */,
 				B1CB34802DD90048008B9210 /* NearbyPlaceEntity.swift in Sources */,
 				957D4C7C2D8E322700971433 /* BaseViewController.swift in Sources */,
 				B1CB349A2DD941D2008B9210 /* StationDetailContract.swift in Sources */,
@@ -1083,6 +1154,7 @@
 				B14C8F3A2DC2370B0066E20A /* ErrorModel.swift in Sources */,
 				B1436E142DD115AC009BCE9E /* Styles.swift in Sources */,
 				B14C8F3B2DC2370B0066E20A /* URLSessionProtocol.swift in Sources */,
+				B10373902DE0042700360C22 /* CoreDataStack.swift in Sources */,
 				B1436E162DD115B5009BCE9E /* Config.swift in Sources */,
 				B1CB34762DD8FCC6008B9210 /* HomeEndpoints.swift in Sources */,
 				B1CB34892DD93696008B9210 /* StationDetailMethods.swift in Sources */,
@@ -1090,19 +1162,27 @@
 				B1CB347A2DD8FCDA008B9210 /* HomeWorker.swift in Sources */,
 				B14C8F3D2DC2370B0066E20A /* RemoteEncoder.swift in Sources */,
 				B14C8F3E2DC2370B0066E20A /* RemoteEndpoint.swift in Sources */,
+				B10373A02DE0121F00360C22 /* NetworkManager.swift in Sources */,
 				B1436E062DD103D1009BCE9E /* OnboardingContract.swift in Sources */,
 				B1436E122DD11598009BCE9E /* Enums.swift in Sources */,
+				B10373872DDFF78500360C22 /* DirectionsEntity.swift in Sources */,
+				B10373812DDFF02900360C22 /* DirectionsFetcher.swift in Sources */,
 				B1436E072DD103D1009BCE9E /* OnboardingInteractor.swift in Sources */,
+				B11854172DDE351500B85086 /* StationDetailCollectionViewCell.swift in Sources */,
 				B1436E082DD103D1009BCE9E /* OnboardingRouter.swift in Sources */,
+				B103738A2DE0021000360C22 /* FavoritesManager.swift in Sources */,
 				B17014822DD7F429000306F9 /* MainTabBarController.swift in Sources */,
 				B1436E092DD103D1009BCE9E /* OnboardingViewController.swift in Sources */,
 				B1436E0A2DD103D1009BCE9E /* OnboardingPresenter.swift in Sources */,
+				B103737F2DDFF01900360C22 /* DirectionsEndpoints.swift in Sources */,
 				B14C8F3F2DC2370B0066E20A /* URLQueryEncoder.swift in Sources */,
 				B14C8F402DC2370B0066E20A /* RemoteEntities.swift in Sources */,
 				957D4C682D8E304A00971433 /* LaunchInteractor.swift in Sources */,
 				B17014B42DD7F4A6000306F9 /* HomeInteractor.swift in Sources */,
 				B17014B52DD7F4A6000306F9 /* HomeRouter.swift in Sources */,
 				B14EACA32DDAA2D600F8F568 /* CLLocationCoordinate2DExtension.swift in Sources */,
+				B10373832DDFF03100360C22 /* DirectionsWorker.swift in Sources */,
+				B103738D2DE002BC00360C22 /* Favorites.xcdatamodeld in Sources */,
 				B17014B62DD7F4A6000306F9 /* HomePresenter.swift in Sources */,
 				B1CB347C2DD8FCE2008B9210 /* HomeMethods.swift in Sources */,
 				B17014B72DD7F4A6000306F9 /* HomeViewController.swift in Sources */,
@@ -1336,6 +1416,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B103738B2DE002BC00360C22 /* Favorites.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B103738C2DE002BC00360C22 /* Favorites.xcdatamodel */,
+			);
+			currentVersion = B103738C2DE002BC00360C22 /* Favorites.xcdatamodel */;
+			path = Favorites.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 957D4C2E2D8E2F7B00971433 /* Project object */;
 }

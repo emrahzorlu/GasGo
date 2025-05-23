@@ -17,7 +17,8 @@ final class StationDetailRouter {
     let presenter = StationDetailPresenter()
     let router = StationDetailRouter()
     let fetcher = StationDetailFetcher()
-    let interactor = StationDetailInteractor(fetcher: fetcher, placeId: placeID)
+    let directionsFetcher = DirectionsFetcher()
+    let interactor = StationDetailInteractor(fetcher: fetcher, directionsFetcher: directionsFetcher, placeId: placeID)
     
     viewController.presenter =  presenter
     

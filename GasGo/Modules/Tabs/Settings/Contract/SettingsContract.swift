@@ -14,6 +14,8 @@ protocol SettingsView: BaseView {
 
 protocol SettingsPresentation: AnyObject {
   func viewDidLoad()
+  
+  func handleSettingSelection(setting: SettingsType)
 }
 
 protocol SettingsInteractorInput: AnyObject {
@@ -25,5 +27,5 @@ protocol SettingsInteractorOutput: AnyObject {
 }
 
 protocol SettingsWireframe: AnyObject {
-  
+  func routeToStationSelection()
 }

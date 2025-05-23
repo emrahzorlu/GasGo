@@ -26,7 +26,8 @@ struct PlaceDetailEntity {
     types?.contains("ev_charging_station") ?? false
   }
   var hasMarket: Bool {
-    types?.contains(where: { $0.contains("supermarket") || $0.contains("convenience_store") }) ?? false
+//    types?.contains(where: { $0.contains("supermarket") || $0.contains("convenience_store") }) ?? false
+    true
   }
   var hasCarWash: Bool {
     types?.contains("car_wash") ?? false

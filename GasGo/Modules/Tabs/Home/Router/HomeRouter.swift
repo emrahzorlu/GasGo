@@ -37,6 +37,6 @@ extension HomeRouter: HomeWireframe {
   func routeToStationDetail(with placeID: String) {
     let stationDetailViewController = StationDetailRouter.setupModule(placeID: placeID)
     
-    view?.navigationController?.pushViewController(stationDetailViewController, animated: false)
+    view?.navigationController?.pushViewController(stationDetailViewController, animated: true)
   }
 }

@@ -12,6 +12,7 @@ final class StationSelectionPresenter {
   weak var view: StationSelectionView?
   var router: StationSelectionWireframe!
   var interactor: StationSelectionInteractorInput!
+  var isFromSettings: Bool = false
 }
 
 extension StationSelectionPresenter: StationSelectionPresentation {
@@ -20,7 +21,11 @@ extension StationSelectionPresenter: StationSelectionPresentation {
   }
   
   func saveButtonTapped() {
-    router.routeToHome()
+    if isFromSettings {
+      router.dismiss()
+    } else {
+      router.routeToHome()
+    }
   }
 }
 

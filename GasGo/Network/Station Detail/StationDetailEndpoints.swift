@@ -12,7 +12,7 @@ final class StationDetailEndpoints: Remote.Endpoint {
   
   override init() {
     super.init()
-    baseRequest.set(url: Config.googleApiUrl)
+    baseRequest.set(url: Config.googleMapsApiUrl)
     baseRequest.set(decoder: MethodDecoder())
   }
   

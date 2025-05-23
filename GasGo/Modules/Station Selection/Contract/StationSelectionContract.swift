@@ -27,4 +27,6 @@ protocol StationSelectionInteractorOutput: AnyObject {
 
 protocol StationSelectionWireframe: AnyObject {
   func routeToHome()
+  
+  func dismiss()
 }

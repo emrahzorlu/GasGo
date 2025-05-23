@@ -11,4 +11,5 @@ target 'GasGo' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'PanModal'
+  pod 'Kingfisher'
 end

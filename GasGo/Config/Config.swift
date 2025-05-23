@@ -9,7 +9,8 @@ import Foundation
 
 class Config {
   static let apiKey = "AIzaSyBPpyFJ9ERU4oOIWO-IgtdybVv2JRsmd14"
-  static let googleApiUrl = URL(string: "https://maps.googleapis.com/maps/api/place/")!
+  static let googleMapsApiUrl = URL(string: "https://maps.googleapis.com/maps/api/place/")!
+  static let googleDirectionsApiUrl = URL(string: "https://maps.googleapis.com/maps/api/directions/")!
   
   static var selectedFavoriteBrand: String? {
     get { UserDefaults.standard.string(forKey: "selectedFavoriteBrand") }

@@ -8,20 +8,10 @@
 import UIKit
 import SnapKit
 
-final class CustomTabBar: UITabBar {
-  override func sizeThatFits(_ size: CGSize) -> CGSize {
-    var size = super.sizeThatFits(size)
-    size.height = 90
-    return size
-  }
-}
-
 class MainTabBarController: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    setValue(CustomTabBar(), forKey: "tabBar")
-    
+        
     let topBorder = UIView()
     topBorder.backgroundColor = UIColor.white.withAlphaComponent(0.15)
     tabBar.addSubview(topBorder)

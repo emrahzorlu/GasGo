@@ -143,13 +143,6 @@ final class StationCardCollectionViewCell: UICollectionViewCell {
     directionButton.layer.cornerRadius = 10
     directionButton.layer.borderWidth = 1
     directionButton.layer.borderColor = Styles.Color.buttercupYellow.cgColor
-    containerView.addSubview(directionButton)
-    directionButton.snp.makeConstraints {
-      $0.bottom.equalToSuperview().inset(12)
-      $0.leading.equalToSuperview().offset(12)
-      $0.height.equalTo(44)
-      $0.width.equalTo(160)
-    }
     
     directionButton.addTarget(self, action: #selector(directionButtonTapped), for: .touchUpInside)
     
@@ -161,15 +154,20 @@ final class StationCardCollectionViewCell: UICollectionViewCell {
     detailButton.setTitleColor(.white, for: .normal)
     detailButton.backgroundColor = Styles.Color.buttercupYellow
     detailButton.layer.cornerRadius = 10
-    containerView.addSubview(detailButton)
-    detailButton.snp.makeConstraints {
-      $0.bottom.equalTo(directionButton)
-      $0.trailing.equalToSuperview().inset(12)
-      $0.height.equalTo(44)
-      $0.width.equalTo(160)
-    }
     
     detailButton.addTarget(self, action: #selector(detailButtonTapped), for: .touchUpInside)
+    
+    let buttonStackView = UIStackView(arrangedSubviews: [directionButton, detailButton])
+    buttonStackView.axis = .horizontal
+    buttonStackView.spacing = 16
+    buttonStackView.distribution = .fillEqually
+    containerView.addSubview(buttonStackView)
+    buttonStackView.snp.makeConstraints {
+      $0.leading.equalToSuperview().offset(12)
+      $0.trailing.equalToSuperview().inset(12)
+      $0.bottom.equalToSuperview().inset(12)
+      $0.height.equalTo(44)
+    }
   }
   
   @objc private func directionButtonTapped() {
