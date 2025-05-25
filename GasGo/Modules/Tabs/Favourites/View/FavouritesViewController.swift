@@ -61,7 +61,7 @@ extension FavouritesViewController: FavouritesView {
       make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
     }
     
-    tableView.register(FavouritesTableViewCell.self, forCellReuseIdentifier: "FavouritesTableViewCell")
+    tableView.register(StationCardTableViewCell.self, forCellReuseIdentifier: TableViewCellIdentifier.stationCardTableViewCell.rawValue)
     tableView.delegate = self
     tableView.dataSource = self
     tableView.separatorStyle = .none
@@ -80,11 +80,20 @@ extension FavouritesViewController: UITableViewDataSource, UITableViewDelegate {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: "FavouritesTableViewCell", for: indexPath) as? FavouritesTableViewCell else {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifier.stationCardTableViewCell.rawValue, for: indexPath) as? StationCardTableViewCell else {
       return UITableViewCell()
     }
+
     let favourite = favourites[indexPath.row]
-    cell.configure(with: favourite)
+    let model = StationCardModel(
+      icon: GasStationBrand(matching: favourite.name).logo,
+      title: favourite.name,
+      address: favourite.address,
+      distanceText: nil,
+      style: .favorite
+    )
+    
+    cell.configure(with: model)
     return cell
   }
   

@@ -293,7 +293,7 @@ final class StationDetailViewController: BaseViewController {
     }
   }
   
-  @objc private func didTapBackButton() {
+  @objc private func backButtonTapped() {
     navigationController?.popViewController(animated: true)
     
     //TODO: Router!
@@ -328,7 +328,7 @@ extension StationDetailViewController: StationDetailView {
       image: backImage,
       style: .plain,
       target: self,
-      action: #selector(didTapBackButton)
+      action: #selector(backButtonTapped)
     )
     navigationItem.leftBarButtonItem?.tintColor = Styles.Color.buttercupYellow
     

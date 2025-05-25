@@ -9,5 +9,7 @@ import Foundation
 
 struct DirectionsEntity {
   let distanceText: String
+  let distanceValue: Int
   let durationText: String
+  let durationValue: Int
 }

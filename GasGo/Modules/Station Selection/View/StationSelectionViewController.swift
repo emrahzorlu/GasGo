@@ -76,6 +76,8 @@ final class StationSelectionViewController: BaseViewController {
     print("Favorite: \(Config.selectedFavoriteBrand ?? "nil")")
     print("Alternative 1: \(Config.selectedAlternativeBrand1 ?? "nil")")
     print("Alternative 2: \(Config.selectedAlternativeBrand2 ?? "nil")")
+    
+    AlertView.show(in: getWindow(), type: .failure, title: "Tercihler başarıyla kaydedildi")
   }
 }
 

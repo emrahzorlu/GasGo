@@ -48,7 +48,7 @@ final class StationDetailFetcher: StationDetailFetcherProtocol {
     let model = NearbySearchRequestModel(
       latitude: lat,
       longitude: lng,
-      radius: radius,
+      radius: Double(radius),
       type: "restaurant",
       keyword: nil
     )

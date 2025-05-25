@@ -18,11 +18,61 @@ final class HomeViewController: BaseViewController {
   private let bottomView = HomeBottomView()
   private var stationList: [NearbyPlaceEntity] = []
   
+  private let emergencyButton: UIButton = {
+    let button = UIButton(type: .system)
+    button.setImage(UIImage(systemName: "light.beacon.max.fill"), for: .normal)
+    button.tintColor = .red
+    button.backgroundColor = .white
+    button.layer.cornerRadius = 28
+    button.clipsToBounds = true
+    return button
+  }()
+  
+  private let refreshButton: UIButton = {
+    let button = UIButton(type: .system)
+    button.setImage(UIImage(systemName: "arrow.clockwise"), for: .normal)
+    button.tintColor = .darkGray
+    button.backgroundColor = .white
+    button.layer.cornerRadius = 28
+    button.clipsToBounds = true
+    return button
+  }()
+  
+  private let loadingView: UIActivityIndicatorView = {
+    let spinner = UIActivityIndicatorView(style: .large)
+    spinner.color = .white
+    spinner.hidesWhenStopped = true
+    return spinner
+  }()
+  
+  private let mapLoadingPlaceholderView: UIView = {
+    let view = UIView()
+    view.backgroundColor = .systemGray5
+    return view
+  }()
+  
+  private let mapLoadingLabel: UILabel = {
+    let label = UILabel()
+    label.text = "Harita yükleniyor..."
+    label.textAlignment = .center
+    label.textColor = .darkGray
+    label.font = Styles.font(family: .outfit, weight: .semiBold, size: 20)
+    return label
+  }()
+  
   // MARK: Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
     presenter.viewDidLoad()
+  }
+  
+  @objc private func emergencyButtonTapped() {
+    presenter.emergencyButtonTapped()
+  }
+
+  @objc private func refreshButtonTapped() {
+    presenter.refreshStations()
   }
 }
 
@@ -32,7 +82,19 @@ extension HomeViewController: HomeView {
     
     mapView.alpha = 0
     view.addSubview(mapView)
+    view.addSubview(mapLoadingPlaceholderView)
+    mapLoadingPlaceholderView.addSubview(mapLoadingLabel)
+    view.addSubview(emergencyButton)
+    view.addSubview(refreshButton)
     view.addSubview(bottomView)
+    view.addSubview(loadingView)
+    
+    refreshButton.addTarget(self, action: #selector(refreshButtonTapped), for: .touchUpInside)
+        
+    loadingView.startAnimating()
+    mapView.isHidden = true
+    
+    emergencyButton.addTarget(self, action: #selector(emergencyButtonTapped), for: .touchUpInside)
     
     bottomView.isHidden = true
     
@@ -60,8 +122,6 @@ extension HomeViewController: HomeView {
       
       self?.presenter.detailButtonTapped(placeID: placeID)
     }
-    
-    
     
     UIView.animate(withDuration: 0.3) {
       self.mapView.alpha = 1
@@ -99,11 +159,52 @@ extension HomeViewController: HomeView {
       $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(8)
       $0.height.equalTo(200)
     }
+    
+    emergencyButton.snp.makeConstraints {
+      $0.trailing.equalToSuperview().inset(10)
+      $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(80)
+      $0.width.height.equalTo(56)
+    }
+    
+    mapLoadingPlaceholderView.snp.makeConstraints { make in
+      make.edges.equalTo(mapView)
+    }
+    
+    mapLoadingLabel.snp.makeConstraints { make in
+      make.centerX.equalToSuperview()
+      make.centerY.equalToSuperview().inset(24)
+    }
+    
+    loadingView.snp.makeConstraints { make in
+      make.center.equalToSuperview()
+    }
+    
+    refreshButton.snp.makeConstraints {
+      $0.trailing.equalToSuperview().inset(10)
+      $0.bottom.equalTo(emergencyButton.snp.top).offset(-12)
+      $0.width.height.equalTo(56)
+    }
   }
   
   func showStations(_ stations: [NearbyPlaceEntity]) {
     stationList = stations
     bottomView.updateStations(stations)
+  }
+  
+  func startLoading() {
+    loadingView.startAnimating()
+    mapView.isHidden = true
+    refreshButton.isHidden = true
+    emergencyButton.isHidden = true
+    mapLoadingPlaceholderView.isHidden = false
+  }
+  
+  func stopLoading() {
+    loadingView.stopAnimating()
+    mapView.isHidden = false
+    refreshButton.isHidden = false
+    emergencyButton.isHidden = false
+    mapLoadingPlaceholderView.isHidden = true
   }
   
   private func scrollToStation(placeID: String) {
@@ -117,7 +218,6 @@ extension HomeViewController: GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
     guard let placeID = marker.userData as? String else { return false }
     
-    //    presenter.didSelectStation(placeID: placeID)
     mapManager?.moveCamera(to: marker.position)
     bottomView.isHidden = false
     scrollToStation(placeID: placeID)

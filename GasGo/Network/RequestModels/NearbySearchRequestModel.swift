@@ -11,7 +11,7 @@ import GoogleMaps
 struct NearbySearchRequestModel: Encodable {
   let latitude: Double
   let longitude: Double
-  let radius: Int
+  let radius: Double
   let type: String?
   let keyword: String?
   let key = Config.apiKey

@@ -20,6 +20,6 @@ final class DirectionsFetcher: DirectionsFetcherProtocol {
       throw NSError(domain: "com.gasgo.error", code: -1, userInfo: [NSLocalizedDescriptionKey: "No route data found"])
     }
     
-    return DirectionsEntity(distanceText: leg.distance.text, durationText: leg.duration.text)
+    return DirectionsEntity(distanceText: leg.distance.text, distanceValue: leg.distance.value, durationText: leg.duration.text, durationValue: leg.duration.value)
   }
 }

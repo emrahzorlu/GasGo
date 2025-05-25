@@ -26,20 +26,20 @@ final class StationDetailInteractor: BaseInteractor {
 extension StationDetailInteractor: StationDetailInteractorInput {
   func getDetails() {
     guard let placeId else { return }
-
+    
     let requestModel = PlaceDetailRequestModel(placeID: placeId)
-
+    
     do {
       if let details = try worker?.getDetails(requestModel: requestModel).first {
         guard let origin = LocationManager.shared.currentLocation else { return }
         let destination = "\(details.latitude),\(details.longitude)"
         let originCoord = "\(origin.latitude),\(origin.longitude)"
-
+        
         let directionsRequest = DirectionsRequestModel(origin: originCoord, destination: destination)
-
+        
         let directions = try? directionsWorker?.getDurations(requestModel: directionsRequest)
         print("📍 directions: \(String(describing: directions))")
-
+        
         DispatchQueue.main.async {
           self.output?.gotDetails(with: [details])
           if let directions = directions {

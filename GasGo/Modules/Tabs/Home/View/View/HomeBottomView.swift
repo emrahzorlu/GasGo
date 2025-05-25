@@ -95,7 +95,7 @@ extension HomeBottomView: UICollectionViewDataSource, UICollectionViewDelegateFl
     let station = stations[indexPath.item]
     let brand = GasStationBrand(matching: station.name)
     let logo = brand.logo
-    let distance = station.distanceText
+    let distance = station.drivingDistanceInMetersText
     let isOpen = station.isOpenNow ?? false
     
     cell.configure(

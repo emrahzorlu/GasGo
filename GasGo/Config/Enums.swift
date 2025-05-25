@@ -16,6 +16,7 @@ enum CollectionViewCellIdentifier: String {
 
 enum TableViewCellIdentifier: String {
   case settingsTableViewCell = "SettingsTableViewCell"
+  case stationCardTableViewCell = "StationCardTableViewCell"
 }
 
 enum OnboardingType: CaseIterable {

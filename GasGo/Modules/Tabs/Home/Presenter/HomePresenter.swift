@@ -13,11 +13,13 @@ final class HomePresenter {
   weak var view: HomeView?
   var router: HomeWireframe!
   var interactor: HomeInteractorInput!
+  private var stations: [NearbyPlaceEntity] = []
 }
 
 extension HomePresenter: HomePresentation {
   func viewDidLoad() {
     view?.setupUI()
+    view?.startLoading()
   }
   
   func notifyCurrentLocation(_ coordinate: CLLocationCoordinate2D) {
@@ -29,11 +31,24 @@ extension HomePresenter: HomePresentation {
   func detailButtonTapped(placeID: String) {
     router.routeToStationDetail(with: placeID)
   }
+  
+  func emergencyButtonTapped() {
+    router.routeToEmergency(with: stations)
+  }
+  
+  
+  func refreshStations() {
+    view?.startLoading()
+    if let location = LocationManager.shared.currentLocation {
+      interactor.notifyCurrentLocation(location)
+    }
+  }
 }
 
 extension HomePresenter: HomeInteractorOutput {
   func gotStations(stations: [NearbyPlaceEntity]) {
     let sortedStations = stations.sorted { $0.coordinate.longitude < $1.coordinate.longitude }
+    self.stations = sortedStations
     
     sortedStations.forEach {
       let brand = GasStationBrand(matching: $0.name)
@@ -41,6 +56,6 @@ extension HomePresenter: HomeInteractorOutput {
     }
     
     view?.showStations(sortedStations)
+    view?.stopLoading()
   }
 }
-

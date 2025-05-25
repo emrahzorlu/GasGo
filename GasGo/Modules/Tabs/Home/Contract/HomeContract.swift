@@ -12,6 +12,9 @@ import GoogleMaps
 protocol HomeView: BaseView {
   func setupUI()
   
+  func startLoading()
+  func stopLoading()
+  
   func showMapAt(_ coordinate: CLLocationCoordinate2D)
   func addMapMarker(at coordinate: CLLocationCoordinate2D, title: String?, placeID: String, brand: GasStationBrand)
   
@@ -22,17 +25,23 @@ protocol HomePresentation: AnyObject {
   func viewDidLoad()
   
   func notifyCurrentLocation(_ coordinate: CLLocationCoordinate2D)
+  func refreshStations()
+  
   func detailButtonTapped(placeID: String)
+  func emergencyButtonTapped()
 }
 
 protocol HomeInteractorInput: AnyObject {
   func getStations(at coordinate: CLLocationCoordinate2D)
+  func notifyCurrentLocation(_ coordinate: CLLocationCoordinate2D)
 }
 
 protocol HomeInteractorOutput: AnyObject {
   func gotStations(stations: [NearbyPlaceEntity])
+  
 }
 
 protocol HomeWireframe: AnyObject {
   func routeToStationDetail(with placeID: String)
+  func routeToEmergency(with stations: [NearbyPlaceEntity])
 }

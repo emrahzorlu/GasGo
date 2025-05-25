@@ -17,7 +17,8 @@ final class HomeRouter {
     let presenter = HomePresenter()
     let router = HomeRouter()
     let fetcher = HomeFetcher()
-    let interactor = HomeInteractor(fetcher: fetcher)
+    let directionsFetcher = DirectionsFetcher()
+    let interactor = HomeInteractor(fetcher: fetcher, directionsFetcher: directionsFetcher)
     
     viewController.presenter =  presenter
     
@@ -38,5 +39,11 @@ extension HomeRouter: HomeWireframe {
     let stationDetailViewController = StationDetailRouter.setupModule(placeID: placeID)
     
     view?.navigationController?.pushViewController(stationDetailViewController, animated: true)
+  }
+  
+  func routeToEmergency(with stations: [NearbyPlaceEntity]) {
+    let emergencyFuelInputViewController = EmergencyFuelInputRouter.setupModule(with: stations)
+    
+    view?.navigationController?.pushViewController(emergencyFuelInputViewController, animated: true)
   }
 }
