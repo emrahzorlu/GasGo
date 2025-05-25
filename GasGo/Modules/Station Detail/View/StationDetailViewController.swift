@@ -128,7 +128,7 @@ final class StationDetailViewController: BaseViewController {
     favButton.layer.cornerRadius = 18
     favButton.clipsToBounds = true
     favButton.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
-    favButton.addTarget(self, action: #selector(didTapFavButton), for: .touchUpInside)
+    favButton.addTarget(self, action: #selector(favButtonTapped), for: .touchUpInside)
     
     let barButtonItem = UIBarButtonItem(customView: favButton)
     navigationItem.rightBarButtonItem = barButtonItem
@@ -283,24 +283,30 @@ final class StationDetailViewController: BaseViewController {
     getDirectionsButton.addTarget(self, action: #selector(getDirectionsButtonTapped), for: .touchUpInside)
   }
   
-  @objc private func didTapFavButton() {
+  @objc private func favButtonTapped() {
+    generateSelectionFeedback()
+    
     isFavorite.toggle()
     updateFavButtonAppearance(isFilled: isFavorite)
     if isFavorite {
       presenter.addCurrentStationToFavorites()
+      AlertView.show(in: getWindow(), type: .success, title: "Favorilere Eklendi!")
     } else {
       presenter.removeCurrentStationFromFavorites()
+      AlertView.show(in: getWindow(), type: .failure, title: "Favorilerden Kaldırıldı!")
     }
   }
   
   @objc private func backButtonTapped() {
+    generateSelectionFeedback()
+
     navigationController?.popViewController(animated: true)
-    
-    //TODO: Router!
   }
   
   
   @objc private func getDirectionsButtonTapped() {
+    generateSelectionFeedback()
+
     presenter.getDirectionsButtonTapped()
     
   }

@@ -74,7 +74,6 @@ final class EmergencyFuelInputViewController: BaseViewController {
     )
     navigationItem.leftBarButtonItem?.tintColor = .black
     
-    setupUI()
     presenter.viewDidLoad()
   }
   
@@ -88,12 +87,16 @@ final class EmergencyFuelInputViewController: BaseViewController {
   }
   
   @objc private func continueButtonTapped() {
+    generateSelectionFeedback()
+    
     let value = Double(round(slider.value * 10) / 10)
     
     presenter.continueButtonTapped(km: value)
   }
   
   @objc private func backButtonTapped() {
+    generateSelectionFeedback()
+    
     navigationController?.popViewController(animated: true)
   }
 }

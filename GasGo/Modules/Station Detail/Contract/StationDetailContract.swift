@@ -18,10 +18,12 @@ protocol StationDetailView: BaseView {
 protocol StationDetailPresentation: AnyObject {
   func viewDidLoad()
   
-  func getDirectionsButtonTapped()
   func addCurrentStationToFavorites()
   func removeCurrentStationFromFavorites()
   func checkIfStationIsFavorite(id: String, completion: @escaping (Bool) -> Void)
+  
+  func getDirectionsButtonTapped()
+  func backButtonTapped()
 }
 
 protocol StationDetailInteractorInput: AnyObject {
@@ -34,5 +36,5 @@ protocol StationDetailInteractorOutput: AnyObject {
 }
 
 protocol StationDetailWireframe: AnyObject {
-  
+  func pop()
 }

@@ -1,8 +1,8 @@
 //
 //  FavoriteStation+CoreDataProperties.swift
+//  
 //
-//
-//  Created by Emrah Zorlu on 23.05.2025.
+//  Created by Emrah Zorlu on 25.05.2025.
 //
 //
 
@@ -16,7 +16,8 @@ extension FavoriteStation {
         return NSFetchRequest<FavoriteStation>(entityName: "FavoriteStation")
     }
 
-    @NSManaged public var id: String?
-    @NSManaged public var name: String?
-    @NSManaged public var adress: String?
+    @NSManaged public var id: NSObject?
+    @NSManaged public var name: NSObject?
+    @NSManaged public var address: NSObject?
+
 }

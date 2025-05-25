@@ -16,6 +16,7 @@ protocol EmergencyFuelInputPresentation: AnyObject {
   func viewDidLoad()
   
   func continueButtonTapped(km: Double)
+  func backButtonTapped()
 }
 
 protocol EmergencyFuelInputInteractorInput: AnyObject {
@@ -28,4 +29,6 @@ protocol EmergencyFuelInputInteractorOutput: AnyObject {
 
 protocol EmergencyFuelInputWireframe: AnyObject {
   func routeToEmergencyStationResult(for value: Double, with stations: [NearbyPlaceEntity])
+  
+  func pop()
 }

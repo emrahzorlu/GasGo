@@ -26,6 +26,7 @@ protocol HomePresentation: AnyObject {
   
   func notifyCurrentLocation(_ coordinate: CLLocationCoordinate2D)
   func refreshStations()
+  func isInternetAvailable() -> Bool 
   
   func detailButtonTapped(placeID: String)
   func emergencyButtonTapped()

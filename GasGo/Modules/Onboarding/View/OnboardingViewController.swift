@@ -35,6 +35,8 @@ final class OnboardingViewController: BaseViewController {
   }
   
   @objc private func continueButtonTapped() {
+    generateSelectionFeedback()
+
     presenter.continueButtonTapped()
   }
 }

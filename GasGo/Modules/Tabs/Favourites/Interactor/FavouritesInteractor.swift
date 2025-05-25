@@ -40,7 +40,7 @@ extension FavouritesInteractor: FavouritesInteractorInput {
         FavouriteStationEntity(
           id: $0.id ?? "",
           name: $0.name ?? "",
-          address: $0.adress
+          address: $0.address
         )
       }
       output?.fetchedFavourites(favourites)

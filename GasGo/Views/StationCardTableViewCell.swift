@@ -26,10 +26,6 @@ struct StationCardModel {
 }
 
 final class StationCardTableViewCell: UITableViewCell {
-  
-  var detailButtonTapped: (() -> Void)?
-  var routeButtonTapped: (() -> Void)?
-  
   private let cardView = UIView()
   private let iconImageView = UIImageView()
   private let titleLabel = UILabel()
@@ -39,6 +35,9 @@ final class StationCardTableViewCell: UITableViewCell {
   private let routeButton = UIButton()
   private let buttonsStackView = UIStackView()
   private let infoStackView = UIStackView()
+  
+  var detailButtonTapped: (() -> Void)?
+  var routeButtonTapped: (() -> Void)?
   
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -179,7 +178,6 @@ final class StationCardTableViewCell: UITableViewCell {
     
     infoStackView.snp.remakeConstraints {
       $0.leading.equalTo(iconImageView.snp.trailing).offset(10)
-      
       if routeButton.isHidden && detailButton.isHidden {
         $0.trailing.equalTo(cardView.snp.trailing).inset(12)
       } else {

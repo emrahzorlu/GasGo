@@ -19,6 +19,8 @@ protocol EmergencyStationResultPresentation: AnyObject {
   func viewDidLoad()
   
   func didSelectStation(with placeID: String)
+  
+  func backButtonTapped()
 }
 
 protocol EmergencyStationResultInteractorInput: AnyObject {
@@ -31,4 +33,6 @@ protocol EmergencyStationResultInteractorOutput: AnyObject {
 
 protocol EmergencyStationResultWireframe: AnyObject {
   func navigateToStationDetail(with placeID: String)
+  
+  func pop()
 }

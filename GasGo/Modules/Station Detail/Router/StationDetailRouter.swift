@@ -35,5 +35,7 @@ final class StationDetailRouter {
 }
 
 extension StationDetailRouter: StationDetailWireframe {
-  
+  func pop() {
+    view?.navigationController?.popViewController(animated: true)
+  }
 }

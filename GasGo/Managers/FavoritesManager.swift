@@ -20,7 +20,7 @@ final class FavoritesManager {
     let favorite = FavoriteStation(context: context)
     favorite.id = station.id
     favorite.name = station.name
-    favorite.adress = station.address
+    favorite.address = station.address
 
     saveContext()
     print("✅ Added to favorites: \(station.name)")

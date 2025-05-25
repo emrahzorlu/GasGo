@@ -70,7 +70,7 @@ final class AlertView: UIView {
       self.alpha = 1
     }
 
-    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
       UIView.animate(withDuration: 0.5, animations: {
         self.alpha = 0
       }, completion: { _ in

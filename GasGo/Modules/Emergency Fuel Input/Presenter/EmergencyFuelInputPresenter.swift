@@ -18,11 +18,15 @@ final class EmergencyFuelInputPresenter {
 
 extension EmergencyFuelInputPresenter: EmergencyFuelInputPresentation {
   func viewDidLoad() {
-    
+    view?.setupUI()
   }
   
   func continueButtonTapped(km: Double) {
     router.routeToEmergencyStationResult(for: km, with: stations)
+  }
+  
+  func backButtonTapped() {
+    router.pop()
   }
 }
 

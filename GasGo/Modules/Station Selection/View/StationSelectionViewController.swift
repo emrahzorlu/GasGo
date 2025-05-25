@@ -67,6 +67,8 @@ final class StationSelectionViewController: BaseViewController {
   }
   
   @objc private func saveButtonTapped() {
+    generateSelectionFeedback()
+
     Config.selectedFavoriteBrand = selectedBrand1
     Config.selectedAlternativeBrand1 = selectedBrand2
     Config.selectedAlternativeBrand2 = selectedBrand3
@@ -77,7 +79,7 @@ final class StationSelectionViewController: BaseViewController {
     print("Alternative 1: \(Config.selectedAlternativeBrand1 ?? "nil")")
     print("Alternative 2: \(Config.selectedAlternativeBrand2 ?? "nil")")
     
-    AlertView.show(in: getWindow(), type: .failure, title: "Tercihler başarıyla kaydedildi")
+    AlertView.show(in: getWindow(), type: .success, title: "Tercihler başarıyla kaydedildi")
   }
 }
 

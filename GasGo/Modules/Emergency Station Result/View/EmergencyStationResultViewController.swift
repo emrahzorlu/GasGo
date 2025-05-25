@@ -72,7 +72,9 @@ extension EmergencyStationResultViewController: EmergencyStationResultView {
   }
   
   @objc private func backButtonTapped() {
-    navigationController?.popViewController(animated: true)
+    generateSelectionFeedback()
+    
+    presenter.backButtonTapped()
   }
   
   func displaySections(_ sections: [StationSection]) {
@@ -112,10 +114,14 @@ extension EmergencyStationResultViewController: UITableViewDataSource {
     
     cell.configure(with: model)
     cell.detailButtonTapped = { [weak self] in
+      self?.generateSelectionFeedback()
+      
       self?.presenter.didSelectStation(with: station.id)
     }
     
-    cell.routeButtonTapped = {
+    cell.routeButtonTapped = { [weak self] in
+      self?.generateSelectionFeedback()
+
       LocationManager.shared.openNavigation(to: station.coordinate)
     }
     

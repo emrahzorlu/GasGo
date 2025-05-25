@@ -15,6 +15,25 @@ final class FavouritesViewController: BaseViewController {
   private let tableView = UITableView()
   private var favourites: [FavouriteStationEntity] = []
   
+  private let emptyStateLabel: UILabel = {
+    let label = UILabel()
+    label.text = "Henüz favori istasyonun yok"
+    label.font = Styles.font(family: .outfit, weight: .regular, size: 30)
+    label.textColor = .white.withAlphaComponent(0.6)
+    label.textAlignment = .center
+    label.numberOfLines = 0
+    label.isHidden = true
+    return label
+  }()
+  
+  private let emptyStateImageView: UIImageView = {
+    let imageView = UIImageView(image: UIImage(systemName: "star.slash.fill"))
+    imageView.tintColor = .white.withAlphaComponent(0.6)
+    imageView.contentMode = .scaleAspectFit
+    imageView.isHidden = true
+    return imageView
+  }()
+  
   // MARK: Lifecycle
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
@@ -35,30 +54,33 @@ extension FavouritesViewController: FavouritesView {
 
     let titleLabel = UILabel()
     titleLabel.text = "Favoriler"
-    titleLabel.font = Styles.font(family: .outfit, weight: .semiBold, size: 30)
-    titleLabel.textColor = Styles.Color.buttercupYellow
+    titleLabel.font = Styles.font(family: .outfit, weight: .semiBold, size: 42)
+    titleLabel.textColor = .white
 
-    let starImageView = UIImageView(image: UIImage(systemName: "star.fill"))
-    starImageView.tintColor = Styles.Color.buttercupYellow
-    starImageView.snp.makeConstraints { make in
-      make.width.height.equalTo(24)
-    }
-
-    let titleStackView = UIStackView(arrangedSubviews: [starImageView, titleLabel])
-    titleStackView.axis = .horizontal
-    titleStackView.spacing = 8
-    titleStackView.alignment = .center
-
-    view.addSubview(titleStackView)
-    titleStackView.snp.makeConstraints { make in
+    view.addSubview(titleLabel)
+    titleLabel.snp.makeConstraints { make in
       make.top.equalTo(view.safeAreaLayoutGuide).offset(16)
       make.leading.equalToSuperview().offset(16)
     }
 
     view.addSubview(tableView)
     tableView.snp.makeConstraints { make in
-      make.top.equalTo(titleStackView.snp.bottom).offset(16)
+      make.top.equalTo(titleLabel.snp.bottom).offset(16)
       make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+    }
+    
+    view.addSubview(emptyStateImageView)
+    view.addSubview(emptyStateLabel)
+
+    emptyStateImageView.snp.makeConstraints { make in
+      make.centerX.equalToSuperview()
+      make.centerY.equalToSuperview().offset(-40)
+      make.width.height.equalTo(100)
+    }
+
+    emptyStateLabel.snp.makeConstraints { make in
+      make.top.equalTo(emptyStateImageView.snp.bottom).offset(20)
+      make.leading.trailing.equalToSuperview().inset(25)
     }
     
     tableView.register(StationCardTableViewCell.self, forCellReuseIdentifier: TableViewCellIdentifier.stationCardTableViewCell.rawValue)
@@ -70,6 +92,12 @@ extension FavouritesViewController: FavouritesView {
   
   func showFavourites(_ favourites: [FavouriteStationEntity]) {
     self.favourites = favourites
+    
+    let isEmpty = favourites.isEmpty
+    emptyStateLabel.isHidden = !isEmpty
+    emptyStateImageView.isHidden = !isEmpty
+    tableView.isHidden = isEmpty == true
+    
     tableView.reloadData()
   }
 }
@@ -116,7 +144,7 @@ extension FavouritesViewController: UITableViewDataSource, UITableViewDelegate {
     if NetworkManager.shared.isConnectedToInternet {
       presenter.statinSelected(station: selectedFavourite)
     } else {
-      //TODO: Show Alert
+      AlertView.show(in: getWindow(), type: .failure, title: "İnternet Bağlantısı Bulunamadı")
     }
   }
 }

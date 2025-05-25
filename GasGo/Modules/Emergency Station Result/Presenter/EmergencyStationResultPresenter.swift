@@ -71,6 +71,10 @@ extension EmergencyStationResultPresenter: EmergencyStationResultPresentation {
   func didSelectStation(with placeID: String) {
     router.navigateToStationDetail(with: placeID)
   }
+  
+  func backButtonTapped() {
+    router.pop()
+  }
 }
 
 extension EmergencyStationResultPresenter: EmergencyStationResultInteractorOutput {

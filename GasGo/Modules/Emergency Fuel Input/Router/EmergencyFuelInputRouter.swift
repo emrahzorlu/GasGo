@@ -39,4 +39,8 @@ extension EmergencyFuelInputRouter: EmergencyFuelInputWireframe {
     
     view?.navigationController?.pushViewController(emergencyStationResultViewController, animated: true)
   }
+  
+  func pop() {
+    view?.navigationController?.popViewController(animated: true)
+  }
 }

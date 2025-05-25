@@ -1,8 +1,8 @@
 //
-//  FavouriteStation.swift
-//  GasGo
+//  FavouriteStationEntity .swift
+//  
 //
-//  Created by Emrah Zorlu on 23.05.2025.
+//  Created by Emrah Zorlu on 25.05.2025.
 //
 
 import Foundation

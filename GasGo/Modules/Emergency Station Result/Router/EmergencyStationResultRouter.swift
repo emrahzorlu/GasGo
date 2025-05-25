@@ -16,7 +16,6 @@ final class EmergencyStationResultRouter {
     let viewController = EmergencyStationResultViewController()
     let presenter = EmergencyStationResultPresenter()
     let router = EmergencyStationResultRouter()
-    let fetcher = HomeFetcher()
     let interactor = EmergencyStationResultInteractor()
     
     viewController.presenter =  presenter
@@ -40,5 +39,9 @@ extension EmergencyStationResultRouter: EmergencyStationResultWireframe {
     let detailVC = StationDetailRouter.setupModule(placeID: placeID)
     
     view?.navigationController?.pushViewController(detailVC, animated: true)
+  }
+  
+  func pop() {
+    view?.navigationController?.popViewController(animated: true)
   }
 }

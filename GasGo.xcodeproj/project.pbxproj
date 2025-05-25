@@ -25,10 +25,6 @@
 		B10373832DDFF03100360C22 /* DirectionsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10373822DDFF03100360C22 /* DirectionsWorker.swift */; };
 		B10373852DDFF03D00360C22 /* DirectionsMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10373842DDFF03D00360C22 /* DirectionsMethods.swift */; };
 		B10373872DDFF78500360C22 /* DirectionsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10373862DDFF78500360C22 /* DirectionsEntity.swift */; };
-		B103738A2DE0021000360C22 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10373892DE0021000360C22 /* FavoritesManager.swift */; };
-		B103738D2DE002BC00360C22 /* Favorites.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B103738B2DE002BC00360C22 /* Favorites.xcdatamodeld */; };
-		B10373902DE0042700360C22 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103738F2DE0042700360C22 /* CoreDataStack.swift */; };
-		B103739E2DE0109900360C22 /* FavouriteStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103739D2DE0109900360C22 /* FavouriteStation.swift */; };
 		B10373A02DE0121F00360C22 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103739F2DE0121F00360C22 /* NetworkManager.swift */; };
 		B111A3DD2DDA71DC0058711F /* HomeBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B111A3DC2DDA71DC0058711F /* HomeBottomView.swift */; };
 		B111A3DF2DDA74520058711F /* StationCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B111A3DE2DDA74520058711F /* StationCardCollectionViewCell.swift */; };
@@ -79,6 +75,10 @@
 		B16A35542DE21D480043373C /* NearbyStationAggregator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16A35532DE21D480043373C /* NearbyStationAggregator.swift */; };
 		B16A35562DE2792B0043373C /* StationCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16A35552DE2792B0043373C /* StationCardTableViewCell.swift */; };
 		B16A35582DE29FF20043373C /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16A35572DE29FF20043373C /* AlertView.swift */; };
+		B16A35672DE2C0C30043373C /* Favorites.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B16A35652DE2C0C30043373C /* Favorites.xcdatamodeld */; };
+		B16A35692DE2C11E0043373C /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16A35682DE2C11E0043373C /* FavoritesManager.swift */; };
+		B16A356B2DE2C14B0043373C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16A356A2DE2C14B0043373C /* CoreDataStack.swift */; };
+		B16A356D2DE2C1C20043373C /* FavouriteStationEntity .swift in Sources */ = {isa = PBXBuildFile; fileRef = B16A356C2DE2C1C20043373C /* FavouriteStationEntity .swift */; };
 		B17014822DD7F429000306F9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17014812DD7F429000306F9 /* MainTabBarController.swift */; };
 		B17014922DD7F497000306F9 /* FavouritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17014892DD7F497000306F9 /* FavouritesInteractor.swift */; };
 		B17014932DD7F497000306F9 /* FavouritesContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17014872DD7F497000306F9 /* FavouritesContract.swift */; };
@@ -154,10 +154,6 @@
 		B10373822DDFF03100360C22 /* DirectionsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsWorker.swift; sourceTree = "<group>"; };
 		B10373842DDFF03D00360C22 /* DirectionsMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsMethods.swift; sourceTree = "<group>"; };
 		B10373862DDFF78500360C22 /* DirectionsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsEntity.swift; sourceTree = "<group>"; };
-		B10373892DE0021000360C22 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
-		B103738C2DE002BC00360C22 /* Favorites.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Favorites.xcdatamodel; sourceTree = "<group>"; };
-		B103738F2DE0042700360C22 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		B103739D2DE0109900360C22 /* FavouriteStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteStation.swift; sourceTree = "<group>"; };
 		B103739F2DE0121F00360C22 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B111A3DC2DDA71DC0058711F /* HomeBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomView.swift; sourceTree = "<group>"; };
 		B111A3DE2DDA74520058711F /* StationCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCardCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -208,6 +204,10 @@
 		B16A35532DE21D480043373C /* NearbyStationAggregator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStationAggregator.swift; sourceTree = "<group>"; };
 		B16A35552DE2792B0043373C /* StationCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCardTableViewCell.swift; sourceTree = "<group>"; };
 		B16A35572DE29FF20043373C /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		B16A35662DE2C0C30043373C /* Favorites.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Favorites.xcdatamodel; sourceTree = "<group>"; };
+		B16A35682DE2C11E0043373C /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
+		B16A356A2DE2C14B0043373C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		B16A356C2DE2C1C20043373C /* FavouriteStationEntity .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavouriteStationEntity .swift"; sourceTree = "<group>"; };
 		B17014812DD7F429000306F9 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		B17014872DD7F497000306F9 /* FavouritesContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesContract.swift; sourceTree = "<group>"; };
 		B17014892DD7F497000306F9 /* FavouritesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesInteractor.swift; sourceTree = "<group>"; };
@@ -288,7 +288,9 @@
 		957D4C2D2D8E2F7B00971433 = {
 			isa = PBXGroup;
 			children = (
-				B103738E2DE0041400360C22 /* Core Data */,
+				B16A356C2DE2C1C20043373C /* FavouriteStationEntity .swift */,
+				B16A35652DE2C0C30043373C /* Favorites.xcdatamodeld */,
+				B16A356A2DE2C14B0043373C /* CoreDataStack.swift */,
 				957D4C572D8E2F8300971433 /* GasGo */,
 				957D4C372D8E2F7B00971433 /* Products */,
 				4FE812E61AB494C76B4F747F /* Pods */,
@@ -420,16 +422,6 @@
 				B10373842DDFF03D00360C22 /* DirectionsMethods.swift */,
 			);
 			path = Directions;
-			sourceTree = "<group>";
-		};
-		B103738E2DE0041400360C22 /* Core Data */ = {
-			isa = PBXGroup;
-			children = (
-				B103738B2DE002BC00360C22 /* Favorites.xcdatamodeld */,
-				B103738F2DE0042700360C22 /* CoreDataStack.swift */,
-				B103739D2DE0109900360C22 /* FavouriteStation.swift */,
-			);
-			path = "Core Data";
 			sourceTree = "<group>";
 		};
 		B111A3DA2DDA71C10058711F /* View */ = {
@@ -933,8 +925,8 @@
 			children = (
 				B1CB346B2DD8CCC8008B9210 /* GoogleMapsManager.swift */,
 				B1CB346D2DD8CF08008B9210 /* LocationManager.swift */,
-				B10373892DE0021000360C22 /* FavoritesManager.swift */,
 				B103739F2DE0121F00360C22 /* NetworkManager.swift */,
+				B16A35682DE2C11E0043373C /* FavoritesManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1237,7 +1229,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B103739E2DE0109900360C22 /* FavouriteStation.swift in Sources */,
 				957D4C672D8E304A00971433 /* LaunchContract.swift in Sources */,
 				957D4C7A2D8E322700971433 /* BaseView.swift in Sources */,
 				B1CB34872DD9368D008B9210 /* StationDetailWorker.swift in Sources */,
@@ -1253,6 +1244,7 @@
 				B17014BC2DD801FB000306F9 /* SettingsTableViewCell.swift in Sources */,
 				B1F337A32DD452BD00BFE14A /* StationSelectionViewController.swift in Sources */,
 				B1F337A42DD452BD00BFE14A /* StationSelectionRouter.swift in Sources */,
+				B16A356B2DE2C14B0043373C /* CoreDataStack.swift in Sources */,
 				B1F337A52DD452BD00BFE14A /* StationSelectionInteractor.swift in Sources */,
 				B1CB346C2DD8CCC8008B9210 /* GoogleMapsManager.swift in Sources */,
 				B1BA3AC92DE0D5E000095247 /* EmergencyStationResultPresenter.swift in Sources */,
@@ -1269,6 +1261,7 @@
 				B10373852DDFF03D00360C22 /* DirectionsMethods.swift in Sources */,
 				B14C8F592DC2379A0066E20A /* KeychainKey.swift in Sources */,
 				B14C8F5A2DC2379A0066E20A /* KeychainStandardConstants.swift in Sources */,
+				B16A35692DE2C11E0043373C /* FavoritesManager.swift in Sources */,
 				B1436E0F2DD113B2009BCE9E /* OnboardingCollectionViewCell.swift in Sources */,
 				B14C8F5B2DC2379A0066E20A /* KeychainWrapper.swift in Sources */,
 				957D4C7B2D8E322700971433 /* BaseInteractor.swift in Sources */,
@@ -1296,7 +1289,6 @@
 				B14C8F3A2DC2370B0066E20A /* ErrorModel.swift in Sources */,
 				B1436E142DD115AC009BCE9E /* Styles.swift in Sources */,
 				B14C8F3B2DC2370B0066E20A /* URLSessionProtocol.swift in Sources */,
-				B10373902DE0042700360C22 /* CoreDataStack.swift in Sources */,
 				B1436E162DD115B5009BCE9E /* Config.swift in Sources */,
 				B1CB34762DD8FCC6008B9210 /* HomeEndpoints.swift in Sources */,
 				B1CB34892DD93696008B9210 /* StationDetailMethods.swift in Sources */,
@@ -1312,7 +1304,7 @@
 				B1436E072DD103D1009BCE9E /* OnboardingInteractor.swift in Sources */,
 				B11854172DDE351500B85086 /* StationDetailCollectionViewCell.swift in Sources */,
 				B1436E082DD103D1009BCE9E /* OnboardingRouter.swift in Sources */,
-				B103738A2DE0021000360C22 /* FavoritesManager.swift in Sources */,
+				B16A35672DE2C0C30043373C /* Favorites.xcdatamodeld in Sources */,
 				B17014822DD7F429000306F9 /* MainTabBarController.swift in Sources */,
 				B1436E092DD103D1009BCE9E /* OnboardingViewController.swift in Sources */,
 				B1436E0A2DD103D1009BCE9E /* OnboardingPresenter.swift in Sources */,
@@ -1326,7 +1318,6 @@
 				B17014B52DD7F4A6000306F9 /* HomeRouter.swift in Sources */,
 				B14EACA32DDAA2D600F8F568 /* CLLocationCoordinate2DExtension.swift in Sources */,
 				B10373832DDFF03100360C22 /* DirectionsWorker.swift in Sources */,
-				B103738D2DE002BC00360C22 /* Favorites.xcdatamodeld in Sources */,
 				B17014B62DD7F4A6000306F9 /* HomePresenter.swift in Sources */,
 				B1CB347C2DD8FCE2008B9210 /* HomeMethods.swift in Sources */,
 				B17014B72DD7F4A6000306F9 /* HomeViewController.swift in Sources */,
@@ -1340,6 +1331,7 @@
 				B17014A62DD7F49F000306F9 /* SettingsInteractor.swift in Sources */,
 				B17014A72DD7F49F000306F9 /* SettingsViewController.swift in Sources */,
 				957D4C6B2D8E304A00971433 /* LaunchRouter.swift in Sources */,
+				B16A356D2DE2C1C20043373C /* FavouriteStationEntity .swift in Sources */,
 				B14EACA02DDAA2AF00F8F568 /* SnappingFlowLayout.swift in Sources */,
 				B1CB348B2DD9370F008B9210 /* PlaceDetailRequestModel.swift in Sources */,
 				B14EACA62DDAABEF00F8F568 /* MarkerFactory.swift in Sources */,
@@ -1367,6 +1359,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TF48UQ5NV2;
@@ -1384,6 +1377,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.emrah.zorlu.GasGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1396,6 +1390,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TF48UQ5NV2;
@@ -1413,6 +1408,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.emrah.zorlu.GasGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1562,12 +1558,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		B103738B2DE002BC00360C22 /* Favorites.xcdatamodeld */ = {
+		B16A35652DE2C0C30043373C /* Favorites.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				B103738C2DE002BC00360C22 /* Favorites.xcdatamodel */,
+				B16A35662DE2C0C30043373C /* Favorites.xcdatamodel */,
 			);
-			currentVersion = B103738C2DE002BC00360C22 /* Favorites.xcdatamodel */;
+			currentVersion = B16A35662DE2C0C30043373C /* Favorites.xcdatamodel */;
 			path = Favorites.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
