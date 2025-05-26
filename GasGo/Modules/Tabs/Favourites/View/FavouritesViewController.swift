@@ -141,10 +141,6 @@ extension FavouritesViewController: UITableViewDataSource, UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let selectedFavourite = favourites[indexPath.row]
     
-    if NetworkManager.shared.isConnectedToInternet {
-      presenter.statinSelected(station: selectedFavourite)
-    } else {
-      AlertView.show(in: getWindow(), type: .failure, title: "İnternet Bağlantısı Bulunamadı")
-    }
+    presenter.statinSelected(station: selectedFavourite)
   }
 }

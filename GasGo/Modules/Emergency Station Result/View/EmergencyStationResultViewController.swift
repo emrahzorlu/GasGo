@@ -15,6 +15,40 @@ final class EmergencyStationResultViewController: BaseViewController {
   private let tableView = UITableView()
   private var sections: [StationSection] = []
   
+  private let emptyStateView: UIView = {
+    let container = UIView()
+    container.isHidden = true
+    
+    let imageView = UIImageView(image: UIImage(systemName: "exclamationmark.triangle.fill"))
+    imageView.tintColor = .white
+    imageView.contentMode = .scaleAspectFit
+    imageView.translatesAutoresizingMaskIntoConstraints = false
+    
+    let label = UILabel()
+    label.text = "Bu bölgede eşleşen istasyon bulunamadı."
+    label.textColor = .white
+    label.font = Styles.font(family: .outfit, weight: .regular, size: 24)
+    label.textAlignment = .center
+    label.numberOfLines = 0
+    label.translatesAutoresizingMaskIntoConstraints = false
+    
+    container.addSubview(imageView)
+    container.addSubview(label)
+    
+    imageView.snp.makeConstraints {
+      $0.centerX.equalToSuperview()
+      $0.centerY.equalToSuperview().offset(-40)
+      $0.width.height.equalTo(64)
+    }
+    
+    label.snp.makeConstraints {
+      $0.top.equalTo(imageView.snp.bottom).offset(16)
+      $0.leading.trailing.equalToSuperview().inset(32)
+    }
+    
+    return container
+  }()
+  
   // MARK: Lifecycle
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
@@ -69,6 +103,8 @@ extension EmergencyStationResultViewController: EmergencyStationResultView {
     navigationItem.leftBarButtonItem?.tintColor = .black
     
     setupTableView()
+    view.addSubview(emptyStateView)
+    emptyStateView.snp.makeConstraints { $0.edges.equalToSuperview() }
   }
   
   @objc private func backButtonTapped() {
@@ -78,7 +114,59 @@ extension EmergencyStationResultViewController: EmergencyStationResultView {
   }
   
   func displaySections(_ sections: [StationSection]) {
-    self.sections = sections
+    self.sections = sections.map {
+      switch $0 {
+      case .favorite(let stations):
+        return stations.isEmpty
+        ? .favorite([NearbyPlaceEntity(
+          id: "placeholder_favorite",
+          name: "Favori istasyon bulunamadı",
+          latitude: 0,
+          longitude: 0,
+          address: nil,
+          iconURL: nil,
+          rating: nil,
+          userRatingsTotal: nil,
+          isOpenNow: nil,
+          distanceText: nil
+        )])
+        : .favorite(stations)
+        
+      case .alternative(let stations):
+        return stations.isEmpty
+        ? .alternative([NearbyPlaceEntity(
+          id: "placeholder_alternative",
+          name: "Alternatif istasyon bulunamadı",
+          latitude: 0,
+          longitude: 0,
+          address: nil,
+          iconURL: nil,
+          rating: nil,
+          userRatingsTotal: nil,
+          isOpenNow: nil,
+          distanceText: nil
+        )])
+        : .alternative(stations)
+      }
+    }
+    
+    let hasFavorites = self.sections.contains {
+      if case .favorite(let stations) = $0 {
+        return !stations.isEmpty && stations.first?.id != "placeholder_favorite"
+      }
+      return false
+    }
+    
+    let hasAlternatives = self.sections.contains {
+      if case .alternative(let stations) = $0 {
+        return !stations.isEmpty && stations.first?.id != "placeholder_alternative"
+      }
+      return false
+    }
+    
+    let shouldShowEmptyState = !hasFavorites && !hasAlternatives
+    emptyStateView.isHidden = !shouldShowEmptyState
+    tableView.isHidden = shouldShowEmptyState
     
     tableView.reloadData()
   }
@@ -103,6 +191,19 @@ extension EmergencyStationResultViewController: UITableViewDataSource {
     case .favorite(let stations), .alternative(let stations):
       station = stations[indexPath.row]
     }
+    if station.id == "placeholder_favorite" || station.id == "placeholder_alternative" {
+      let model = StationCardModel(
+        icon: nil,
+        title: station.name,
+        address: "",
+        distanceText: "",
+        style: .empty
+      )
+      cell.configure(with: model)
+      cell.detailButtonTapped = nil
+      cell.routeButtonTapped = nil
+      return cell
+    }
     let brand = GasStationBrand(matching: station.name)
     let model = StationCardModel(
       icon: brand.logo,
@@ -121,7 +222,7 @@ extension EmergencyStationResultViewController: UITableViewDataSource {
     
     cell.routeButtonTapped = { [weak self] in
       self?.generateSelectionFeedback()
-
+      
       LocationManager.shared.openNavigation(to: station.coordinate)
     }
     
@@ -145,6 +246,10 @@ extension EmergencyStationResultViewController: UITableViewDelegate {
     case .favorite(let stations), .alternative(let stations):
       station = stations[indexPath.row]
     }
+    
+    let isPlaceholder = station.id == "placeholder_favorite" || station.id == "placeholder_alternative"
+    guard !isPlaceholder else { return }
+    
     presenter.didSelectStation(with: station.id)
   }
   

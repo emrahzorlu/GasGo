@@ -17,14 +17,14 @@ final class GoogleMapsManager {
   }
   
   private func configureMap() {
-    print("🛠 configureMap called")
+    debugPrint("🛠 configureMap called")
     guard let mapView = mapView else { return }
     mapView.isMyLocationEnabled = true
     mapView.settings.myLocationButton = true
     }
   
   func addMarker(at coordinate: CLLocationCoordinate2D, title: String? = nil, icon: UIImage? = nil, placeID: String? = nil) {
-    print("📍 addMarker called at: \(coordinate.latitude), \(coordinate.longitude)")
+    debugPrint("📍 addMarker called at: \(coordinate.latitude), \(coordinate.longitude)")
     guard let mapView else { return }
     
     let marker = GMSMarker(position: coordinate)
@@ -34,8 +34,8 @@ final class GoogleMapsManager {
     marker.map = mapView
   }
   
-  func moveCamera(to coordinate: CLLocationCoordinate2D, zoom: Float = 15.0) {
-    print("🎥 moveCamera called to: \(coordinate.latitude), \(coordinate.longitude) with zoom: \(zoom)")
+  func moveCamera(to coordinate: CLLocationCoordinate2D, zoom: Float = 13.0) {
+    debugPrint("🎥 moveCamera called to: \(coordinate.latitude), \(coordinate.longitude) with zoom: \(zoom)")
     guard let mapView else { return }
     
     let camera = GMSCameraUpdate.setCamera(GMSCameraPosition(target: coordinate, zoom: zoom))
@@ -43,22 +43,22 @@ final class GoogleMapsManager {
   }
   
   func clearMarkers() {
-    print("🧹 clearMarkers called")
+    debugPrint("🧹 clearMarkers called")
     mapView?.clear()
   }
   
   func applyDarkStyle(from fileName: String = "dark_map_style") {
-    print("🎨 applyDarkStyle called with file: \(fileName)")
+    debugPrint("🎨 applyDarkStyle called with file: \(fileName)")
     guard let mapView else { return }
     
     if let styleURL = Bundle.main.url(forResource: fileName, withExtension: "json") {
       do {
         mapView.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
       } catch {
-        print("❌ Harita teması yüklenemedi: \(error)")
+        debugPrint("❌ Harita teması yüklenemedi: \(error)")
       }
     } else {
-      print("❌ JSON dosyası bulunamadı.")
+      debugPrint("❌ JSON dosyası bulunamadı.")
     }
   }
 }

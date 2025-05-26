@@ -53,12 +53,12 @@ extension EmergencyStationResultPresenter: EmergencyStationResultPresentation {
     
     let favoriteStations = filteredStations.filter {
       $0.name.lowercased().contains(favoriteRaw)
-    }
+    }.sorted { ($0.drivingDistanceInMeters ?? Int.max) < ($1.drivingDistanceInMeters ?? Int.max) }
     
     let alternativeStations = filteredStations.filter {
       let name = $0.name.lowercased()
       return name.contains(alt1Raw) || name.contains(alt2Raw)
-    }
+    }.sorted { ($0.drivingDistanceInMeters ?? Int.max) < ($1.drivingDistanceInMeters ?? Int.max) }
     
     let sections: [StationSection] = [
       .favorite(favoriteStations),

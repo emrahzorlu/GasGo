@@ -20,5 +20,13 @@
       <string>Outfit-SemiBold.ttf</string>
       <string>Outfit-Thin.ttf</string>
     </array>
+    <key>CFBundleIcons</key>
+    <dict>
+      <key>CFBundlePrimaryIcon</key>
+      <dict>
+        <key>CFBundleIconName</key>
+        <string>AppIcon</string>
+      </dict>
+    </dict>
   </dict>
 </plist>

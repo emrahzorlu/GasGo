@@ -9,16 +9,15 @@ import UIKit
 import GoogleMaps
 
 final class MarkerFactory {
-  static func buildMarkerIcon(for brand: GasStationBrand) -> UIImage? {
+  static func buildMarkerIcon(for brand: GasStationBrand, isFavorite: Bool = false) -> UIImage? {
     let size = CGSize(width: 60, height: 70)
-    
     let container = UIView(frame: CGRect(origin: .zero, size: size))
-    
+
     let background = UIImageView(image: Styles.Image.baseMarker)
     background.frame = container.bounds
     background.contentMode = .scaleAspectFit
     container.addSubview(background)
-    
+
     let logoSize: CGFloat = 28
     let logo = UIImageView(image: brand.logo)
     logo.contentMode = .scaleAspectFit
@@ -29,7 +28,14 @@ final class MarkerFactory {
       height: logoSize
     )
     container.addSubview(logo)
-    
+
+    if isFavorite {
+      let topLeftStar = UIImageView(image: Styles.Image.goldStar)
+      topLeftStar.frame = CGRect(x: 4, y: 4, width: 24, height: 24)
+      topLeftStar.contentMode = .scaleAspectFit
+      container.addSubview(topLeftStar)
+    }
+
     return renderViewAsImage(view: container)
   }
   

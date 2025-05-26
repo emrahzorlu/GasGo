@@ -70,6 +70,7 @@ class Styles {
     
     static let phoneSelect = UIImage(named: "PhoneSelect")!
     static let baseMarker = UIImage(named: "BaseMarker")!
+    static let goldStar = UIImage(named: "GoldStar")!
   }
 }
 

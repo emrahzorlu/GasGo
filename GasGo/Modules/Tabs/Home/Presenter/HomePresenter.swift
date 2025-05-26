@@ -69,6 +69,7 @@ extension HomePresenter: HomeInteractorOutput {
     
     sortedStations.forEach {
       let brand = GasStationBrand(matching: $0.name)
+      print("GasStationBrand: \(brand)")
       view?.addMapMarker(at: $0.coordinate, title: $0.name, placeID: $0.id, brand: brand)
     }
     

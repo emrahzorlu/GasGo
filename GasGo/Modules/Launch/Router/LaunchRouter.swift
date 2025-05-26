@@ -42,7 +42,7 @@ extension LaunchRouter: LaunchWireframe {
     } else {
       let onboardingViewController = OnboardingRouter.setupModule()
       onboardingViewController.modalPresentationStyle = .fullScreen
-
+      
       view?.present(onboardingViewController, animated: true)
     }
   }

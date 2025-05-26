@@ -11,7 +11,6 @@
 		957D4C582D8E2F8300971433 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 957D4C4F2D8E2F8300971433 /* Assets.xcassets */; };
 		957D4C5A2D8E2F8300971433 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 957D4C522D8E2F8300971433 /* LaunchScreen.storyboard */; };
 		957D4C5C2D8E2F8300971433 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D4C4E2D8E2F8300971433 /* AppDelegate.swift */; };
-		957D4C662D8E304A00971433 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 957D4C602D8E304A00971433 /* Launch.storyboard */; };
 		957D4C672D8E304A00971433 /* LaunchContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D4C612D8E304A00971433 /* LaunchContract.swift */; };
 		957D4C682D8E304A00971433 /* LaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D4C622D8E304A00971433 /* LaunchInteractor.swift */; };
 		957D4C692D8E304A00971433 /* LaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957D4C632D8E304A00971433 /* LaunchPresenter.swift */; };
@@ -140,7 +139,6 @@
 		957D4C4F2D8E2F8300971433 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		957D4C502D8E2F8300971433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		957D4C512D8E2F8300971433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		957D4C602D8E304A00971433 /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		957D4C612D8E304A00971433 /* LaunchContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchContract.swift; sourceTree = "<group>"; };
 		957D4C622D8E304A00971433 /* LaunchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInteractor.swift; sourceTree = "<group>"; };
 		957D4C632D8E304A00971433 /* LaunchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPresenter.swift; sourceTree = "<group>"; };
@@ -364,7 +362,6 @@
 		957D4C712D8E31D600971433 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				957D4C602D8E304A00971433 /* Launch.storyboard */,
 				957D4C652D8E304A00971433 /* LaunchViewController.swift */,
 			);
 			path = View;
@@ -1151,7 +1148,6 @@
 				B1436E302DD115C5009BCE9E /* Animation1.json in Resources */,
 				957D4C582D8E2F8300971433 /* Assets.xcassets in Resources */,
 				957D4C5A2D8E2F8300971433 /* LaunchScreen.storyboard in Resources */,
-				957D4C662D8E304A00971433 /* Launch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

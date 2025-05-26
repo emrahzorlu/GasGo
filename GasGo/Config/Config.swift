@@ -14,7 +14,10 @@ class Config {
   
   static var selectedFavoriteBrand: String? {
     get { UserDefaults.standard.string(forKey: "selectedFavoriteBrand") }
-    set { UserDefaults.standard.set(newValue, forKey: "selectedFavoriteBrand") }
+    set {
+      UserDefaults.standard.set(newValue, forKey: "selectedFavoriteBrand")
+      NotificationCenter.default.post(name: .favoriteBrandChanged, object: nil)
+    }
   }
   
   static var selectedAlternativeBrand1: String? {
@@ -31,4 +34,8 @@ class Config {
     get { UserDefaults.standard.bool(forKey: "didFinishOnboarding") }
     set { UserDefaults.standard.set(newValue, forKey: "didFinishOnboarding") }
   }
+}
+
+extension Notification.Name {
+  static let favoriteBrandChanged = Notification.Name("favoriteBrandChanged")
 }

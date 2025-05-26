@@ -11,6 +11,7 @@ import SnapKit
 enum StationCardStyle {
   case emergency
   case favorite
+  case empty
 }
 
 struct StationCardModel {
@@ -19,7 +20,7 @@ struct StationCardModel {
   let address: String?
   let distanceText: String?
   let style: StationCardStyle
-
+  
   var showButton: Bool {
     return style == .emergency
   }
@@ -41,6 +42,7 @@ final class StationCardTableViewCell: UITableViewCell {
   
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
+    
     setupUI()
   }
   
@@ -160,32 +162,52 @@ final class StationCardTableViewCell: UITableViewCell {
   func configure(with model: StationCardModel) {
     iconImageView.image = model.icon
     
-    titleLabel.text = model.style == .emergency ? "\(model.title) • \(model.distanceText ?? "-")" : model.title
-    addressLabel.text = model.address
-    detailButton.isHidden = !model.showButton
-    routeButton.isHidden = !model.showButton
-    
     switch model.style {
     case .emergency:
+      titleLabel.text = "\(model.title) • \(model.distanceText ?? "-")"
       distanceLabel.isHidden = false
       detailButton.isHidden = !model.showButton
       routeButton.isHidden = !model.showButton
+      titleLabel.textAlignment = .left
+      addressLabel.isHidden = false
+      addressLabel.text = model.address
     case .favorite:
+      titleLabel.text = model.title
       distanceLabel.isHidden = true
       detailButton.isHidden = true
       routeButton.isHidden = true
+      titleLabel.textAlignment = .left
+      addressLabel.isHidden = false
+      addressLabel.text = model.address
+    case .empty:
+      titleLabel.text = model.title
+      distanceLabel.isHidden = true
+      detailButton.isHidden = true
+      routeButton.isHidden = true
+      titleLabel.textAlignment = .center
+      addressLabel.isHidden = true
+      
+      infoStackView.snp.remakeConstraints {
+        $0.center.equalToSuperview()
+        $0.leading.greaterThanOrEqualTo(cardView.snp.leading).offset(12)
+        $0.trailing.lessThanOrEqualTo(cardView.snp.trailing).inset(12)
+      }
     }
     
-    infoStackView.snp.remakeConstraints {
-      $0.leading.equalTo(iconImageView.snp.trailing).offset(10)
-      if routeButton.isHidden && detailButton.isHidden {
-        $0.trailing.equalTo(cardView.snp.trailing).inset(12)
-      } else {
-        $0.trailing.equalTo(buttonsStackView.snp.leading).offset(-10)
+    if model.style != .empty {
+      infoStackView.alignment = model.style == .empty ? .center : .leading
+      
+      infoStackView.snp.remakeConstraints {
+        $0.leading.equalTo(iconImageView.snp.trailing).offset(10)
+        if routeButton.isHidden && detailButton.isHidden {
+          $0.trailing.equalTo(cardView.snp.trailing).inset(12)
+        } else {
+          $0.trailing.equalTo(buttonsStackView.snp.leading).offset(-10)
+        }
+        $0.centerY.equalToSuperview()
+        $0.top.greaterThanOrEqualToSuperview()
+        $0.bottom.lessThanOrEqualToSuperview()
       }
-      $0.centerY.equalToSuperview()
-      $0.top.greaterThanOrEqualToSuperview()
-      $0.bottom.lessThanOrEqualToSuperview()
     }
   }
   

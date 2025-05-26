@@ -89,7 +89,24 @@ final class HomeViewController: BaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(handleFavoriteBrandChanged),
+      name: .favoriteBrandChanged,
+      object: nil
+    )
+    
     presenter.viewDidLoad()
+  }
+  
+  deinit {
+    NotificationCenter.default.removeObserver(self, name: .favoriteBrandChanged, object: nil)
+  }
+  
+  @objc private func handleFavoriteBrandChanged() {
+    mapView.clear()
+    
+    presenter.refreshStations()
   }
   
   @objc private func emergencyButtonTapped() {
@@ -101,6 +118,8 @@ final class HomeViewController: BaseViewController {
   @objc private func refreshButtonTapped() {
     generateSelectionFeedback()
     
+    mapView.clear()
+
     presenter.refreshStations()
   }
 
@@ -209,10 +228,15 @@ extension HomeViewController: HomeView {
   }
   
   func addMapMarker(at coordinate: CLLocationCoordinate2D, title: String?, placeID: String, brand: GasStationBrand) {
-    let icon = MarkerFactory.buildMarkerIcon(for: brand)
-    mapManager?.addMarker(at: coordinate, title: title, icon: icon, placeID: placeID)
+    let selected = Config.selectedFavoriteBrand ?? ""
+    let normalizedSelected = selected.replacingOccurrences(of: " ", with: "").lowercased()
+    let normalizedCurrent = brand.rawValue.replacingOccurrences(of: " ", with: "").lowercased()
+    let shouldHighlight = normalizedSelected == normalizedCurrent
     
-    print("Marked addet for \(coordinate)")
+    print("Favori brand: \(Config.selectedFavoriteBrand ?? "-")")
+    print("shouldHighlight: \(shouldHighlight)")
+    let icon = MarkerFactory.buildMarkerIcon(for: brand, isFavorite: shouldHighlight)
+    mapManager?.addMarker(at: coordinate, title: title, icon: icon, placeID: placeID)
   }
   
   func setupConstarints() {
