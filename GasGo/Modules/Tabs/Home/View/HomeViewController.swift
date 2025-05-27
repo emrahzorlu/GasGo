@@ -19,7 +19,6 @@ final class HomeViewController: BaseViewController {
   private let mapView = GMSMapView()
   private let bottomView = HomeBottomView()
   private var stationList: [NearbyPlaceEntity] = []
-  private let locationManager = CLLocationManager()
   
   private var selectedPlaceID: String?
   
@@ -76,12 +75,19 @@ final class HomeViewController: BaseViewController {
     super.viewDidLoad()
     
     NotificationCenter.default.addObserver(self, selector: #selector(handleFavoriteBrandChanged), name: .favoriteBrandChanged, object: nil)
+    NotificationCenter.default.addObserver(
+        self,
+        selector: #selector(checkLocationPermissionStatusFromForeground),
+        name: UIApplication.willEnterForegroundNotification,
+        object: nil
+    )
     
     presenter.viewDidLoad()
   }
   
   deinit {
     NotificationCenter.default.removeObserver(self, name: .favoriteBrandChanged, object: nil)
+    NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
   }
   
   private func reloadMarkers() {
@@ -93,6 +99,7 @@ final class HomeViewController: BaseViewController {
       let isSelected = station.id == selectedPlaceID
       
       let icon = MarkerFactory.buildMarkerIcon(for: brand, isFavorite: false, isSelected: isSelected)
+      
       mapManager?.addMarker(at: station.coordinate, title: station.name, icon: icon, placeID: station.id)
     }
   }
@@ -105,6 +112,7 @@ final class HomeViewController: BaseViewController {
     label.numberOfLines = 0
     label.textAlignment = .center
     label.isHidden = true
+    
     return label
   }()
   
@@ -116,6 +124,7 @@ final class HomeViewController: BaseViewController {
     button.backgroundColor = Styles.Color.buttercupYellow
     button.layer.cornerRadius = 8
     button.isHidden = true
+    
     return button
   }()
   
@@ -144,24 +153,29 @@ final class HomeViewController: BaseViewController {
     }
   }
   
+  @objc private func checkLocationPermissionStatusFromForeground() {
+    checkLocationPermissionStatus()
+  }
+  
   private func checkLocationPermissionStatus() {
-    let status = locationManager.authorizationStatus
+    let status = LocationManager.shared.authorizationStatus
     let isDenied = status == .denied || status == .restricted
-    
+
     if isDenied {
       loadingView.stopAnimating()
       
       tabBarController?.tabBar.isUserInteractionEnabled = false
+      mapLoadingLabel.text = "Harita Yüklenemiyor..."
       locationWarningLabel.isHidden = false
       openSettingsButton.isHidden = false
       emergencyButton.isHidden = true
       mapView.isHidden = true
-      mapLoadingLabel.text = isDenied ? "Harita Yüklenemiyor..." : "Harita yükleniyor..."
     }
     
     else {
       tabBarController?.tabBar.isUserInteractionEnabled = true
       
+      mapLoadingLabel.text = "Harita yükleniyor..."
       locationWarningLabel.isHidden = true
       openSettingsButton.isHidden = true
     }
@@ -193,11 +207,11 @@ extension HomeViewController: HomeView {
     
     bottomView.isHidden = true
     
+    
     mapManager = GoogleMapsManager(mapView: mapView)
     mapManager?.applyDarkStyle()
     
     mapView.delegate = self
-    locationManager.delegate = self
     
     bottomView.didScrollToStation = { [weak self] station in
       self?.generateSelectionFeedback()
@@ -233,11 +247,15 @@ extension HomeViewController: HomeView {
       self?.presenter.notifyCurrentLocation(coordinate)
     }
     
+    LocationManager.shared.authorizationChanged = { [weak self] status in
+      self?.checkLocationPermissionStatus()
+    }
+    
     setupConstarints()
   }
   
   func showMapAt(_ coordinate: CLLocationCoordinate2D) {
-    mapManager?.moveCamera(to: coordinate)
+    mapManager?.moveCamera(to: coordinate, keepZoomLevel: false)
   }
   
   func addMapMarker(at coordinate: CLLocationCoordinate2D, title: String?, placeID: String, brand: GasStationBrand) {
@@ -246,8 +264,6 @@ extension HomeViewController: HomeView {
     let normalizedCurrent = brand.rawValue.replacingOccurrences(of: " ", with: "").lowercased()
     let shouldHighlight = normalizedSelected == normalizedCurrent
     
-    print("Favori brand: \(Config.selectedFavoriteBrand ?? "-")")
-    print("shouldHighlight: \(shouldHighlight)")
     let icon = MarkerFactory.buildMarkerIcon(for: brand, isFavorite: shouldHighlight)
     mapManager?.addMarker(at: coordinate, title: title, icon: icon, placeID: placeID)
   }
@@ -306,6 +322,7 @@ extension HomeViewController: HomeView {
   
   func showStations(_ stations: [NearbyPlaceEntity]) {
     stationList = stations
+    
     bottomView.updateStations(stations)
   }
   
@@ -321,7 +338,7 @@ extension HomeViewController: HomeView {
       return
     }
     
-    let status = locationManager.authorizationStatus
+    let status = LocationManager.shared.authorizationStatus
     if status == .denied || status == .restricted {
       checkLocationPermissionStatus()
       return
@@ -368,11 +385,5 @@ extension HomeViewController: GMSMapViewDelegate {
     bottomView.isHidden = true
     selectedPlaceID = nil
     reloadMarkers()
-  }
-}
-
-extension HomeViewController: CLLocationManagerDelegate {
-  func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-    checkLocationPermissionStatus()
   }
 }

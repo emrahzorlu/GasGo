@@ -14,9 +14,15 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
   private let locationManager = CLLocationManager()
   private(set) var currentLocation: CLLocationCoordinate2D?
   var locationUpdated: ((CLLocationCoordinate2D) -> Void)?
+  var authorizationChanged: ((CLAuthorizationStatus) -> Void)?
+  
+  var authorizationStatus: CLAuthorizationStatus {
+      return locationManager.authorizationStatus
+  }
   
   override init() {
     super.init()
+    
     locationManager.delegate = self
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
     locationManager.requestWhenInUseAuthorization()
@@ -28,11 +34,14 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
     self.currentLocation = coordinate
     
     if let handler = locationUpdated {
-      locationUpdated = nil
       handler(coordinate)
     }
     
     locationManager.stopUpdatingLocation()
+  }
+  
+  func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+    authorizationChanged?(manager.authorizationStatus)
   }
   
   func distanceFromCurrentLocation(to coordinate: CLLocationCoordinate2D) -> CLLocationDistance? {

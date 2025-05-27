@@ -33,11 +33,13 @@ final class GoogleMapsManager {
     marker.map = mapView
   }
   
-  func moveCamera(to coordinate: CLLocationCoordinate2D, zoom: Float = 13.0) {
+  func moveCamera(to coordinate: CLLocationCoordinate2D, keepZoomLevel: Bool = true, zoom: Float = 13.0) {
     debugPrint("🎥 moveCamera called to: \(coordinate.latitude), \(coordinate.longitude) with zoom: \(zoom)")
     guard let mapView else { return }
-    
-    let camera = GMSCameraUpdate.setCamera(GMSCameraPosition(target: coordinate, zoom: zoom))
+
+    let currentZoom = mapView.camera.zoom
+    let targetZoom = keepZoomLevel ? currentZoom : zoom
+    let camera = GMSCameraUpdate.setCamera(GMSCameraPosition(target: coordinate, zoom: targetZoom))
     mapView.animate(with: camera)
   }
   
