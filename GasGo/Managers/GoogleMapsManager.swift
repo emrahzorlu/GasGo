@@ -20,7 +20,6 @@ final class GoogleMapsManager {
     debugPrint("🛠 configureMap called")
     guard let mapView = mapView else { return }
     mapView.isMyLocationEnabled = true
-    mapView.settings.myLocationButton = true
     }
   
   func addMarker(at coordinate: CLLocationCoordinate2D, title: String? = nil, icon: UIImage? = nil, placeID: String? = nil) {
@@ -60,5 +59,18 @@ final class GoogleMapsManager {
     } else {
       debugPrint("❌ JSON dosyası bulunamadı.")
     }
+  }
+
+  func moveCameraToMyLocation(zoom: Float = 15.0) {
+    guard let mapView = mapView, let location = mapView.myLocation else {
+      debugPrint("⚠️ Konum bilgisi alınamadı")
+      return
+    }
+
+    let coordinate = location.coordinate
+    debugPrint("🎯 moveCameraToMyLocation called → \(coordinate.latitude), \(coordinate.longitude)")
+
+    let cameraUpdate = GMSCameraUpdate.setCamera(GMSCameraPosition(target: coordinate, zoom: zoom))
+    mapView.animate(with: cameraUpdate)
   }
 }

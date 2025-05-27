@@ -16,6 +16,13 @@ final class HomePresenter {
   var router: HomeWireframe!
   var interactor: HomeInteractorInput!
   private var stations: [NearbyPlaceEntity] = []
+  
+  
+  private func stationsChanged(from old: [NearbyPlaceEntity], to new: [NearbyPlaceEntity]) -> Bool {
+    let oldIDs = old.map { $0.id }
+    let newIDs = new.map { $0.id }
+    return oldIDs != newIDs
+  }
 }
 
 extension HomePresenter: HomePresentation {
@@ -24,8 +31,16 @@ extension HomePresenter: HomePresentation {
     view?.startLoading()
   }
   
+  func viewWillAppear() {
+    if stations.isEmpty, let location = LocationManager.shared.currentLocation {
+      notifyCurrentLocation(location)
+    }
+  }
+  
   func notifyCurrentLocation(_ coordinate: CLLocationCoordinate2D) {
-    view?.showMapAt(coordinate)
+    if stations.isEmpty {
+      view?.showMapAt(coordinate)
+    }
     
     interactor.getStations(at: coordinate)
   }
@@ -40,7 +55,6 @@ extension HomePresenter: HomePresentation {
   
   
   func refreshStations() {
-    view?.startLoading()
     if let location = LocationManager.shared.currentLocation {
       interactor.notifyCurrentLocation(location)
     }
@@ -65,15 +79,19 @@ extension HomePresenter: HomePresentation {
 extension HomePresenter: HomeInteractorOutput {
   func gotStations(stations: [NearbyPlaceEntity]) {
     let sortedStations = stations.sorted { $0.coordinate.longitude < $1.coordinate.longitude }
-    self.stations = sortedStations
-    
+    let hasChanged = stationsChanged(from: self.stations, to: sortedStations)
+    if hasChanged {
+      view?.startLoading()
+    }
     sortedStations.forEach {
       let brand = GasStationBrand(matching: $0.name)
-      print("GasStationBrand: \(brand)")
+      debugPrint("GasStationBrand: \(brand)")
       view?.addMapMarker(at: $0.coordinate, title: $0.name, placeID: $0.id, brand: brand)
     }
-    
     view?.showStations(sortedStations)
-    view?.stopLoading()
+    if hasChanged {
+      view?.stopLoading()
+    }
+    self.stations = sortedStations
   }
 }

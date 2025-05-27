@@ -23,6 +23,7 @@ protocol HomeView: BaseView {
 
 protocol HomePresentation: AnyObject {
   func viewDidLoad()
+  func viewWillAppear()
   
   func notifyCurrentLocation(_ coordinate: CLLocationCoordinate2D)
   func refreshStations()
