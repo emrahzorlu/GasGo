@@ -19,7 +19,7 @@
 
 | Sayfa 1 | Sayfa 2 | Sayfa 3 |
 |--------|---------|---------|
-| ![Onboarding1](./Screenshots/onboarding1.png) | ![Onboarding2](./Screenshots/onboarding2.png) | ![Onboarding3](./Screenshots/onboarding3.png) |
+| ![Onboarding1](./Screenshots/onboarding1.PNG) | ![Onboarding2](./Screenshots/onboarding2.PNG) | ![Onboarding3](./Screenshots/onboarding3.PNG) |
 
 ---
 
@@ -27,7 +27,7 @@
 
 | Ana Sayfa | Favoriler | Ayarlar |
 |-----------|-----------|---------|
-| ![Home](./Screenshots/home.png) | ![Fav](./Screenshots/fav.png) | ![Settings](./Screenshots/setting.png) |
+| ![Home](./Screenshots/home.PNG) | ![Fav](./Screenshots/fav.PNG) | ![Settings](./Screenshots/settings.PNG) |
 
 ---
 
@@ -35,7 +35,7 @@
 
 | Yakıt Girişi | Önerilen İstasyonlar |
 |--------------|------------------------|
-| ![Emergency1](./Screenshots/emergency1.png) | ![Emergency2](./Screenshots/emergency2.png) |
+| ![Emergency1](./Screenshots/emergency.PNG) | ![Emergency2](./Screenshots/emergency2.PNG) |
 
 ---
 
