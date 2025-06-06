@@ -23,8 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     
-    GMSServices.provideAPIKey("AIzaSyBPpyFJ9ERU4oOIWO-IgtdybVv2JRsmd14")
-    GMSPlacesClient.provideAPIKey("AIzaSyBPpyFJ9ERU4oOIWO-IgtdybVv2JRsmd14")
+    GMSServices.provideAPIKey(Config.apiKey)
+    GMSPlacesClient.provideAPIKey(Config.apiKey)
     window?.rootViewController = LaunchRouter.setupModule()
     window?.makeKeyAndVisible()
     
