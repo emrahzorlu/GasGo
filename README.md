@@ -37,6 +37,14 @@
 |--------------|------------------------|
 | ![Emergency1](./Screenshots/emergency.PNG) | ![Emergency2](./Screenshots/emergency2.PNG) |
 
+
+
+## 📄 Detay ve Navigasyon
+
+| Detay Ekranı | Navigasyon |
+|--------------|------------|
+| ![Detail](./Screenshots/detail.PNG) | ![Nav](./Screenshots/nav.PNG) |
+
 ---
 
 ## 🛠 Teknolojiler
