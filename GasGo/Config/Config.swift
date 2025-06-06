@@ -8,7 +8,7 @@
 import Foundation
 
 class Config {
-  static let apiKey = "AIzaSyBPpyFJ9ERU4oOIWO-IgtdybVv2JRsmd14"
+  static let apiKey = "You can use it by entering your own API Key"
   static let googleMapsApiUrl = URL(string: "https://maps.googleapis.com/maps/api/place/")!
   static let googleDirectionsApiUrl = URL(string: "https://maps.googleapis.com/maps/api/directions/")!
   

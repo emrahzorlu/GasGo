@@ -30,8 +30,10 @@ final class MarkerFactory {
     container.addSubview(logo)
 
     if isFavorite {
+      let starSize: CGFloat = isSelected ? 28 : 24
+      let starInset: CGFloat = isSelected ? 6 : 4
       let topLeftStar = UIImageView(image: Styles.Image.goldStar)
-      topLeftStar.frame = CGRect(x: 4, y: 4, width: 24, height: 24)
+      topLeftStar.frame = CGRect(x: starInset, y: starInset, width: starSize, height: starSize)
       topLeftStar.contentMode = .scaleAspectFit
       container.addSubview(topLeftStar)
     }

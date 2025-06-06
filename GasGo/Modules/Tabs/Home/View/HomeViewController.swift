@@ -92,14 +92,19 @@ final class HomeViewController: BaseViewController {
   
   private func reloadMarkers() {
     mapManager?.clearMarkers()
-    
+
     for station in stationList {
       let brand = GasStationBrand(matching: station.name)
-      
+
       let isSelected = station.id == selectedPlaceID
-      
-      let icon = MarkerFactory.buildMarkerIcon(for: brand, isFavorite: false, isSelected: isSelected)
-      
+
+      let selectedBrand = Config.selectedFavoriteBrand ?? ""
+      let normalizedSelected = selectedBrand.replacingOccurrences(of: " ", with: "").lowercased()
+      let normalizedStation = brand.rawValue.replacingOccurrences(of: " ", with: "").lowercased()
+      let isFavorite = normalizedSelected == normalizedStation
+
+      let icon = MarkerFactory.buildMarkerIcon(for: brand, isFavorite: isFavorite, isSelected: isSelected)
+
       mapManager?.addMarker(at: station.coordinate, title: station.name, icon: icon, placeID: station.id)
     }
   }
@@ -168,6 +173,7 @@ final class HomeViewController: BaseViewController {
       mapLoadingLabel.text = "Harita Yüklenemiyor..."
       locationWarningLabel.isHidden = false
       openSettingsButton.isHidden = false
+      myLocationButton.isHidden = true
       emergencyButton.isHidden = true
       mapView.isHidden = true
     }
